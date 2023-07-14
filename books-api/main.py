@@ -4,5 +4,5 @@ app = FastAPI()
 
 
 @app.get("/")
-def get():
+def get_root():
     return "Welcome to my app!"
