@@ -98,11 +98,11 @@ def add_book(author: Author, book: Book):
         # Add the pair to the bookauthors table
         pairing = BookAuthor(author_id=author.author_id, book_id=book.book_id)
         session.add(pairing)
-        print(f"Book-Author pair added: {str(pairing)}")
+        print(f"Book-Author pair added")
         session.commit()
 
 
 add_book(
     author=Author(first_name="Neil", last_name="Gaiman"),
-    book=Book(title="Neverland", number_of_pages=221),
+    book=Book(title="Neverwhere", number_of_pages=221),
 )
