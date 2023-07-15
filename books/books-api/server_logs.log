@@ -1,0 +1,170 @@
+2023-07-15 14:01:54,424 - INFO - Adding Book: The thing with 612 pages.
+2023-07-15 14:01:54,425 - INFO - Adding Author: Steven King2
+2023-07-15 14:01:54,426 - INFO - BEGIN (implicit)
+2023-07-15 14:01:54,432 - INFO - SELECT books.book_id, books.title, books.number_of_pages 
+FROM books 
+WHERE books.title = %(title_1)s AND books.number_of_pages = %(number_of_pages_1)s
+2023-07-15 14:01:54,434 - INFO - [generated in 0.00225s] {'title_1': 'The thing', 'number_of_pages_1': 612}
+2023-07-15 14:01:54,437 - INFO - ROLLBACK
+2023-07-15 14:01:54,439 - INFO - New Book added: The thing with 612 pages. Author: Steven King2
+2023-07-15 14:10:18,760 - INFO - Adding Book: The thing with 612 pages.
+2023-07-15 14:10:18,760 - INFO - Adding Author: Steven King2
+2023-07-15 14:10:18,760 - INFO - Check if the book already exist The thing 612
+2023-07-15 14:10:18,760 - INFO - BEGIN (implicit)
+2023-07-15 14:10:18,760 - INFO - SELECT books.book_id, books.title, books.number_of_pages 
+FROM books 
+WHERE books.title = %(title_1)s AND books.number_of_pages = %(number_of_pages_1)s
+2023-07-15 14:10:18,760 - INFO - [generated in 0.00099s] {'title_1': 'The thing', 'number_of_pages_1': 612}
+2023-07-15 14:10:18,760 - INFO - Check if the book already exist. Existing book: <Book(book_id='9', title='The thing', number_of_pages='612')>
+2023-07-15 14:10:18,760 - INFO - Book already exists.
+2023-07-15 14:10:18,760 - INFO - ROLLBACK
+2023-07-15 14:10:18,760 - INFO - New Book added: The thing with 612 pages. Author: Steven King2
+2023-07-15 14:11:09,869 - INFO - Adding Book: Paradign with 612 pages.
+2023-07-15 14:11:09,869 - INFO - Adding Author: New Very
+2023-07-15 14:11:09,870 - INFO - Check if the book already exist Paradign 612
+2023-07-15 14:11:09,870 - INFO - BEGIN (implicit)
+2023-07-15 14:11:09,873 - INFO - SELECT books.book_id, books.title, books.number_of_pages 
+FROM books 
+WHERE books.title = %(title_1)s AND books.number_of_pages = %(number_of_pages_1)s
+2023-07-15 14:11:09,874 - INFO - [cached since 51.1s ago] {'title_1': 'Paradign', 'number_of_pages_1': 612}
+2023-07-15 14:11:09,875 - INFO - Check if the book already exist. Existing book: None
+2023-07-15 14:11:09,876 - INFO - Check if the author already exists New Very
+2023-07-15 14:11:09,878 - INFO - SELECT authors.author_id, authors.first_name, authors.last_name 
+FROM authors 
+WHERE authors.first_name = %(first_name_1)s AND authors.last_name = %(last_name_1)s
+2023-07-15 14:11:09,878 - INFO - [generated in 0.00081s] {'first_name_1': 'New', 'last_name_1': 'Very'}
+2023-07-15 14:11:09,879 - INFO - Add an author if needed
+2023-07-15 14:11:09,880 - INFO - Adding Author
+2023-07-15 14:11:09,880 - INFO - Author added
+2023-07-15 14:11:09,882 - INFO - INSERT INTO authors (first_name, last_name) VALUES (%(first_name)s, %(last_name)s)
+2023-07-15 14:11:09,883 - INFO - [generated in 0.00127s] {'first_name': 'New', 'last_name': 'Very'}
+2023-07-15 14:11:09,884 - INFO - Book added
+2023-07-15 14:11:09,886 - INFO - INSERT INTO books (title, number_of_pages) VALUES (%(title)s, %(number_of_pages)s)
+2023-07-15 14:11:09,887 - INFO - [generated in 0.00097s] {'title': 'Paradign', 'number_of_pages': 612}
+2023-07-15 14:11:09,889 - INFO - Book-Author pair added
+2023-07-15 14:11:09,890 - INFO - INSERT INTO bookauthors (author_id, book_id) VALUES (%(author_id)s, %(book_id)s)
+2023-07-15 14:11:09,890 - INFO - [generated in 0.00073s] {'author_id': 4, 'book_id': 10}
+2023-07-15 14:11:09,891 - INFO - COMMIT
+2023-07-15 14:11:09,916 - ERROR - Error adding book: Instance <Book at 0x273056a78b0> is not bound to a Session; attribute refresh operation cannot proceed (Background on this error at: https://sqlalche.me/e/20/bhk3)
+2023-07-15 14:44:19,681 - INFO - Adding Book: Paradign with 612 pages.
+2023-07-15 14:44:19,681 - INFO - Adding Author: Testing TheAuthor
+2023-07-15 14:44:19,681 - INFO - Check if the book already exist Paradign 612
+2023-07-15 14:44:19,681 - INFO - BEGIN (implicit)
+2023-07-15 14:44:19,697 - INFO - SELECT books.book_id, books.title, books.number_of_pages 
+FROM books 
+WHERE books.title = %(title_1)s AND books.number_of_pages = %(number_of_pages_1)s
+2023-07-15 14:44:19,697 - INFO - [generated in 0.00101s] {'title_1': 'Paradign', 'number_of_pages_1': 612}
+2023-07-15 14:44:19,697 - INFO - Check if the book already exist. Existing book: <Book(book_id='10', title='Paradign', number_of_pages='612')>
+2023-07-15 14:44:19,697 - INFO - Book already exists.
+2023-07-15 14:44:19,697 - INFO - ROLLBACK
+2023-07-15 14:44:19,697 - INFO - New Book added: Paradign with 612 pages. Author: Testing TheAuthor
+2023-07-15 14:45:17,033 - INFO - Adding Book: Totally New book with 212 pages.
+2023-07-15 14:45:17,033 - INFO - Adding Author: Totally New TheAuthor
+2023-07-15 14:45:17,033 - INFO - Check if the book already exist Totally New book 212
+2023-07-15 14:45:17,034 - INFO - BEGIN (implicit)
+2023-07-15 14:45:17,038 - INFO - SELECT books.book_id, books.title, books.number_of_pages 
+FROM books 
+WHERE books.title = %(title_1)s AND books.number_of_pages = %(number_of_pages_1)s
+2023-07-15 14:45:17,039 - INFO - [generated in 0.00109s] {'title_1': 'Totally New book', 'number_of_pages_1': 212}
+2023-07-15 14:45:17,041 - INFO - Check if the book already exist. Existing book: None
+2023-07-15 14:45:17,041 - INFO - Check if the author already exists Totally New TheAuthor
+2023-07-15 14:45:17,043 - INFO - SELECT authors.author_id, authors.first_name, authors.last_name 
+FROM authors 
+WHERE authors.first_name = %(first_name_1)s AND authors.last_name = %(last_name_1)s
+2023-07-15 14:45:17,043 - INFO - [generated in 0.00067s] {'first_name_1': 'Totally New', 'last_name_1': 'TheAuthor'}
+2023-07-15 14:45:17,045 - INFO - Add an author if needed
+2023-07-15 14:45:17,045 - INFO - Adding Author
+2023-07-15 14:45:17,045 - INFO - Author added
+2023-07-15 14:45:17,047 - INFO - INSERT INTO authors (first_name, last_name) VALUES (%(first_name)s, %(last_name)s)
+2023-07-15 14:45:17,048 - INFO - [generated in 0.00090s] {'first_name': 'Totally New', 'last_name': 'TheAuthor'}
+2023-07-15 14:45:17,054 - INFO - Book added
+2023-07-15 14:45:17,056 - INFO - INSERT INTO books (title, number_of_pages) VALUES (%(title)s, %(number_of_pages)s)
+2023-07-15 14:45:17,056 - INFO - [generated in 0.00084s] {'title': 'Totally New book', 'number_of_pages': 212}
+2023-07-15 14:45:17,058 - INFO - Book-Author pair added
+2023-07-15 14:45:17,059 - INFO - INSERT INTO bookauthors (author_id, book_id) VALUES (%(author_id)s, %(book_id)s)
+2023-07-15 14:45:17,059 - INFO - [generated in 0.00068s] {'author_id': 5, 'book_id': 11}
+2023-07-15 14:45:17,062 - INFO - COMMIT
+2023-07-15 14:45:17,069 - ERROR - Error adding book: Instance <Book at 0x1e6978e7d00> is not bound to a Session; attribute refresh operation cannot proceed (Background on this error at: https://sqlalche.me/e/20/bhk3)
+2023-07-15 14:57:28,116 - INFO - Adding Book: The mighty with 324 pages.
+2023-07-15 14:57:28,116 - INFO - Adding Author: Harry Fischer
+2023-07-15 14:57:28,116 - INFO - Check if the book already exist The mighty 324
+2023-07-15 14:57:28,117 - INFO - BEGIN (implicit)
+2023-07-15 14:57:28,121 - INFO - SELECT books.book_id, books.title, books.number_of_pages 
+FROM books 
+WHERE books.title = %(title_1)s AND books.number_of_pages = %(number_of_pages_1)s
+2023-07-15 14:57:28,121 - INFO - [generated in 0.00106s] {'title_1': 'The mighty', 'number_of_pages_1': 324}
+2023-07-15 14:57:28,124 - INFO - Check if the book already exist. Existing book: None
+2023-07-15 14:57:28,124 - INFO - Check if the author already exists Harry Fischer
+2023-07-15 14:57:28,124 - INFO - SELECT authors.author_id, authors.first_name, authors.last_name 
+FROM authors 
+WHERE authors.first_name = %(first_name_1)s AND authors.last_name = %(last_name_1)s
+2023-07-15 14:57:28,124 - INFO - [generated in 0.00078s] {'first_name_1': 'Harry', 'last_name_1': 'Fischer'}
+2023-07-15 14:57:28,124 - INFO - Add an author if needed
+2023-07-15 14:57:28,124 - INFO - Adding Author
+2023-07-15 14:57:28,124 - INFO - Author added
+2023-07-15 14:57:28,124 - INFO - INSERT INTO authors (first_name, last_name) VALUES (%(first_name)s, %(last_name)s)
+2023-07-15 14:57:28,124 - INFO - [generated in 0.00083s] {'first_name': 'Harry', 'last_name': 'Fischer'}
+2023-07-15 14:57:28,124 - INFO - Book added
+2023-07-15 14:57:28,124 - INFO - INSERT INTO books (title, number_of_pages) VALUES (%(title)s, %(number_of_pages)s)
+2023-07-15 14:57:28,124 - INFO - [generated in 0.00062s] {'title': 'The mighty', 'number_of_pages': 324}
+2023-07-15 14:57:28,124 - INFO - Book-Author pair added
+2023-07-15 14:57:28,124 - INFO - INSERT INTO bookauthors (author_id, book_id) VALUES (%(author_id)s, %(book_id)s)
+2023-07-15 14:57:28,124 - INFO - [generated in 0.00065s] {'author_id': 6, 'book_id': 12}
+2023-07-15 14:57:28,124 - INFO - COMMIT
+2023-07-15 14:57:28,140 - ERROR - Error adding book: Instance <Book at 0x2dc3f9e7670> is not bound to a Session; attribute refresh operation cannot proceed (Background on this error at: https://sqlalche.me/e/20/bhk3)
+2023-07-15 15:03:07,445 - INFO - Adding Book: Hot with 324 pages.
+2023-07-15 15:03:07,446 - INFO - Adding Author: Mans Not
+2023-07-15 15:03:07,446 - INFO - Check if the book already exist Hot 324
+2023-07-15 15:03:07,447 - INFO - BEGIN (implicit)
+2023-07-15 15:03:07,450 - INFO - SELECT books.book_id, books.title, books.number_of_pages 
+FROM books 
+WHERE books.title = %(title_1)s AND books.number_of_pages = %(number_of_pages_1)s
+2023-07-15 15:03:07,450 - INFO - [generated in 0.00083s] {'title_1': 'Hot', 'number_of_pages_1': 324}
+2023-07-15 15:03:07,452 - INFO - Check if the book already exist. Existing book: None
+2023-07-15 15:03:07,452 - INFO - Add the book
+2023-07-15 15:03:07,452 - INFO - Book added
+2023-07-15 15:03:07,455 - INFO - INSERT INTO books (title, number_of_pages) VALUES (%(title)s, %(number_of_pages)s)
+2023-07-15 15:03:07,455 - INFO - [generated in 0.00066s] {'title': 'Hot', 'number_of_pages': 324}
+2023-07-15 15:03:07,456 - INFO - Check if the author already exists Mans Not
+2023-07-15 15:03:07,459 - INFO - SELECT authors.author_id, authors.first_name, authors.last_name 
+FROM authors 
+WHERE authors.first_name = %(first_name_1)s AND authors.last_name = %(last_name_1)s
+2023-07-15 15:03:07,459 - INFO - [generated in 0.00068s] {'first_name_1': 'Mans', 'last_name_1': 'Not'}
+2023-07-15 15:03:07,461 - INFO - Add an author if needed
+2023-07-15 15:03:07,461 - INFO - Adding Author
+2023-07-15 15:03:07,461 - INFO - Author added
+2023-07-15 15:03:07,463 - INFO - INSERT INTO authors (first_name, last_name) VALUES (%(first_name)s, %(last_name)s)
+2023-07-15 15:03:07,463 - INFO - [generated in 0.00088s] {'first_name': 'Mans', 'last_name': 'Not'}
+2023-07-15 15:03:07,465 - INFO - Book-Author pair added
+2023-07-15 15:03:07,467 - INFO - INSERT INTO bookauthors (author_id, book_id) VALUES (%(author_id)s, %(book_id)s)
+2023-07-15 15:03:07,467 - INFO - [generated in 0.00073s] {'author_id': 7, 'book_id': 13}
+2023-07-15 15:03:07,468 - INFO - COMMIT
+2023-07-15 15:03:07,476 - ERROR - Error adding book: Instance <Book at 0x14606777d00> is not bound to a Session; attribute refresh operation cannot proceed (Background on this error at: https://sqlalche.me/e/20/bhk3)
+2023-07-15 15:04:55,612 - INFO - Adding Book: Dead with 324 pages.
+2023-07-15 15:04:55,612 - INFO - Adding Author: Flush Is 
+2023-07-15 15:04:55,612 - INFO - Check if the book already exist Dead 324
+2023-07-15 15:04:55,613 - INFO - BEGIN (implicit)
+2023-07-15 15:04:55,616 - INFO - SELECT books.book_id, books.title, books.number_of_pages 
+FROM books 
+WHERE books.title = %(title_1)s AND books.number_of_pages = %(number_of_pages_1)s
+2023-07-15 15:04:55,616 - INFO - [generated in 0.00073s] {'title_1': 'Dead', 'number_of_pages_1': 324}
+2023-07-15 15:04:55,619 - INFO - Check if the book already exist. Existing book: None
+2023-07-15 15:04:55,619 - INFO - Add the book
+2023-07-15 15:04:55,619 - INFO - Book added
+2023-07-15 15:04:55,619 - INFO - Check if the author already exists Flush Is 
+2023-07-15 15:04:55,622 - INFO - INSERT INTO books (title, number_of_pages) VALUES (%(title)s, %(number_of_pages)s)
+2023-07-15 15:04:55,622 - INFO - [generated in 0.00072s] {'title': 'Dead', 'number_of_pages': 324}
+2023-07-15 15:04:55,625 - INFO - SELECT authors.author_id, authors.first_name, authors.last_name 
+FROM authors 
+WHERE authors.first_name = %(first_name_1)s AND authors.last_name = %(last_name_1)s
+2023-07-15 15:04:55,626 - INFO - [generated in 0.00106s] {'first_name_1': 'Flush', 'last_name_1': 'Is '}
+2023-07-15 15:04:55,627 - INFO - Add an author if needed
+2023-07-15 15:04:55,627 - INFO - Adding Author
+2023-07-15 15:04:55,627 - INFO - Author added
+2023-07-15 15:04:55,628 - INFO - INSERT INTO authors (first_name, last_name) VALUES (%(first_name)s, %(last_name)s)
+2023-07-15 15:04:55,628 - INFO - [generated in 0.00055s] {'first_name': 'Flush', 'last_name': 'Is '}
+2023-07-15 15:04:55,630 - INFO - Book-Author pair added
+2023-07-15 15:04:55,631 - INFO - INSERT INTO bookauthors (author_id, book_id) VALUES (%(author_id)s, %(book_id)s)
+2023-07-15 15:04:55,631 - INFO - [generated in 0.00056s] {'author_id': 8, 'book_id': 14}
+2023-07-15 15:04:55,632 - INFO - COMMIT
+2023-07-15 15:04:55,637 - ERROR - Error adding book: Instance <Book at 0x15028f17d00> is not bound to a Session; attribute refresh operation cannot proceed (Background on this error at: https://sqlalche.me/e/20/bhk3)
