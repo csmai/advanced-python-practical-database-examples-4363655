@@ -100,9 +100,3 @@ def add_book(author: Author, book: Book):
         session.add(pairing)
         print(f"Book-Author pair added")
         session.commit()
-
-
-add_book(
-    author=Author(first_name="Neil", last_name="Gaiman"),
-    book=Book(title="FFF", number_of_pages=221),
-)
