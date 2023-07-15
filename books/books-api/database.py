@@ -1,6 +1,7 @@
 from sqlalchemy.orm import registry, relationship, Session
 from sqlalchemy import Column, String, Integer, create_engine, ForeignKey, select
 import os
+import logging
 
 password = os.getenv("P4PASSWD")
 
@@ -64,39 +65,53 @@ Base.metadata.create_all(engine)
 
 def add_book(author: Author, book: Book):
     with Session(engine) as session:
-        # Check if the book already exists
+        logging.info(
+            "Check if the book already exist %s %s", book.title, book.number_of_pages
+        )
         existing_book = session.execute(
             select(Book).filter_by(
                 title=book.title, number_of_pages=book.number_of_pages
             )
         ).scalar()
+
+        logging.info(
+            "Check if the book already exist. Existing book: %s", existing_book
+        )
+
         if existing_book is not None:
-            print("Book already exists.")
+            logging.info("Book already exists.")
             return
 
-        # Check if the author already exists
+        logging.info(
+            "Check if the author already exists %s %s",
+            author.first_name,
+            author.last_name,
+        )
+
         existing_author = session.execute(
             select(Author).filter_by(
                 first_name=author.first_name, last_name=author.last_name
             )
         ).scalar()
 
-        # Add an author if needed
+        logging.info("Add an author if needed")
         if existing_author is not None:
-            print("Author already added. Adding Book.")
+            logging.info("Author already added. Adding Book.")
+            author_id = existing_author.author_id
         else:
-            print("Adding Author")
+            logging.info("Adding Author")
             session.add(author)
-            print("Author added")
+            logging.info("Author added")
             session.flush()
+            author_id = author.author_id
 
-        # Add th ebook
+        # Add the ebook
         session.add(book)
-        print("Book added")
+        logging.info("Book added")
         session.flush()
 
         # Add the pair to the bookauthors table
-        pairing = BookAuthor(author_id=author.author_id, book_id=book.book_id)
+        pairing = BookAuthor(author_id=author_id, book_id=book.book_id)
         session.add(pairing)
-        print(f"Book-Author pair added")
+        logging.info("Book-Author pair added")
         session.commit()
