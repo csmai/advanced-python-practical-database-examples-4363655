@@ -39,11 +39,11 @@ def create_book(request: schemas.BookAuthorPayload):
         return "Failed to add book. Please check the server logs for details."
 
 
-def conv_payload_to_Book(book_pl):
+def conv_payload_to_Book(book_pl: schemas.Book):
     return database.Book(title=book_pl.title, number_of_pages=book_pl.number_of_pages)
 
 
-def conv_payload_to_Author(author_pl):
+def conv_payload_to_Author(author_pl: schemas.Author):
     return database.Author(
         first_name=author_pl.first_name, last_name=author_pl.last_name
     )

@@ -82,6 +82,10 @@ def add_book(author: Author, book: Book):
             logging.info("Book already exists.")
             return
 
+        logging.info("Add the book")
+        session.add(book)
+        logging.info("Book added")
+
         logging.info(
             "Check if the author already exists %s %s",
             author.first_name,
@@ -104,11 +108,6 @@ def add_book(author: Author, book: Book):
             logging.info("Author added")
             session.flush()
             author_id = author.author_id
-
-        # Add the ebook
-        session.add(book)
-        logging.info("Book added")
-        session.flush()
 
         # Add the pair to the bookauthors table
         pairing = BookAuthor(author_id=author_id, book_id=book.book_id)
