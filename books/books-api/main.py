@@ -18,6 +18,21 @@ def get_root():
     return "Welcome to the books api"
 
 
+@app.get("/book/{book_id}")
+def get_book_by_id(book_id: int):
+    logging.info("Getting data from book with id %d.", book_id)
+    logging.info(book_id)
+    logging.info(type(book_id))
+    try:
+        found_book, found_author = database.get_book_author_data(book_id)
+        # return: only strings!
+        return f"Book: {found_book.title} Num. of pages: {found_book.number_of_pages}, Author: {found_author.first_name} {found_author.last_name}"
+    except Exception as e:
+        # Log any exceptions that occur during book creation
+        logging.error("Error getting book: %s", str(e))
+        return "Failed to get book. Please check the server logs for details."
+
+
 @app.post("/book/")
 def create_book(request: schemas.BookAuthorPayload):
     try:

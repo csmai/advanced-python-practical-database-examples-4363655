@@ -114,3 +114,33 @@ def add_book(book: Book, author: Author):
         session.add(pairing)
         logging.info("Book-Author pair added")
         session.commit()
+
+
+def get_book_author_data(given_id):
+    with Session(engine) as session:
+        logging.info("Getting the book's data with id:%s", given_id)
+        found_book = session.execute(select(Book).filter_by(book_id=given_id)).scalar()
+
+        if found_book is not None:
+            logging.info(
+                "Getting the book data title: %s, number of pages: %s",
+                found_book.title,
+                found_book.number_of_pages,
+            )
+            found_bookauthor = session.execute(
+                select(BookAuthor).filter_by(book_id=given_id)
+            ).scalar()
+
+            if found_bookauthor is not None:
+                found_author = session.execute(
+                    select(Author).filter_by(author_id=found_bookauthor.author_id)
+                ).scalar()
+                if found_author is not None:
+                    logging.info(
+                        "Getting the author data %s %s",
+                        found_author.first_name,
+                        found_author.last_name,
+                    )
+                    return found_book, found_author
+        else:
+            return None
