@@ -168,3 +168,108 @@ WHERE authors.first_name = %(first_name_1)s AND authors.last_name = %(last_name_
 2023-07-15 15:04:55,631 - INFO - [generated in 0.00056s] {'author_id': 8, 'book_id': 14}
 2023-07-15 15:04:55,632 - INFO - COMMIT
 2023-07-15 15:04:55,637 - ERROR - Error adding book: Instance <Book at 0x15028f17d00> is not bound to a Session; attribute refresh operation cannot proceed (Background on this error at: https://sqlalche.me/e/20/bhk3)
+INFO:sqlalchemy.engine.Engine:SELECT DATABASE()
+INFO:sqlalchemy.engine.Engine:[raw sql] {}
+INFO:sqlalchemy.engine.Engine:SELECT @@sql_mode
+INFO:sqlalchemy.engine.Engine:[raw sql] {}
+INFO:sqlalchemy.engine.Engine:SELECT @@lower_case_table_names
+INFO:sqlalchemy.engine.Engine:[raw sql] {}
+INFO:sqlalchemy.engine.Engine:BEGIN (implicit)
+INFO:sqlalchemy.engine.Engine:DESCRIBE `books`.`authors`
+INFO:sqlalchemy.engine.Engine:[raw sql] {}
+INFO:sqlalchemy.engine.Engine:DESCRIBE `books`.`books`
+INFO:sqlalchemy.engine.Engine:[raw sql] {}
+INFO:sqlalchemy.engine.Engine:DESCRIBE `books`.`bookauthors`
+INFO:sqlalchemy.engine.Engine:[raw sql] {}
+INFO:sqlalchemy.engine.Engine:COMMIT
+INFO:sqlalchemy.engine.Engine:BEGIN (implicit)
+INFO:sqlalchemy.engine.Engine:SELECT books.book_id, books.title, books.number_of_pages 
+FROM books 
+WHERE books.title = %(title_1)s AND books.number_of_pages = %(number_of_pages_1)s
+INFO:sqlalchemy.engine.Engine:[generated in 0.00096s] {'title_1': 'DeWhether goodad', 'number_of_pages_1': 324}
+INFO:root:Book has already been added.
+INFO:sqlalchemy.engine.Engine:ROLLBACK
+INFO:sqlalchemy.engine.Engine:SELECT DATABASE()
+INFO:sqlalchemy.engine.Engine:[raw sql] {}
+INFO:sqlalchemy.engine.Engine:SELECT @@sql_mode
+INFO:sqlalchemy.engine.Engine:[raw sql] {}
+INFO:sqlalchemy.engine.Engine:SELECT @@lower_case_table_names
+INFO:sqlalchemy.engine.Engine:[raw sql] {}
+INFO:sqlalchemy.engine.Engine:BEGIN (implicit)
+INFO:sqlalchemy.engine.Engine:DESCRIBE `books`.`authors`
+INFO:sqlalchemy.engine.Engine:[raw sql] {}
+INFO:sqlalchemy.engine.Engine:DESCRIBE `books`.`books`
+INFO:sqlalchemy.engine.Engine:[raw sql] {}
+INFO:sqlalchemy.engine.Engine:DESCRIBE `books`.`bookauthors`
+INFO:sqlalchemy.engine.Engine:[raw sql] {}
+INFO:sqlalchemy.engine.Engine:COMMIT
+SELECT DATABASE()
+[raw sql] {}
+SELECT @@sql_mode
+[raw sql] {}
+SELECT @@lower_case_table_names
+[raw sql] {}
+BEGIN (implicit)
+DESCRIBE `books`.`authors`
+[raw sql] {}
+DESCRIBE `books`.`books`
+[raw sql] {}
+DESCRIBE `books`.`bookauthors`
+[raw sql] {}
+COMMIT
+BEGIN (implicit)
+SELECT books.book_id, books.title, books.number_of_pages 
+FROM books 
+WHERE books.title = %(title_1)s AND books.number_of_pages = %(number_of_pages_1)s
+[generated in 0.00124s] {'title_1': 'DeWhether goodad', 'number_of_pages_1': 324}
+Book has already been added.
+ROLLBACK
+2023-07-17 16:11:26,200 - INFO - SELECT DATABASE()
+2023-07-17 16:11:26,216 - INFO - [raw sql] {}
+2023-07-17 16:11:26,216 - INFO - SELECT @@sql_mode
+2023-07-17 16:11:26,216 - INFO - [raw sql] {}
+2023-07-17 16:11:26,216 - INFO - SELECT @@lower_case_table_names
+2023-07-17 16:11:26,216 - INFO - [raw sql] {}
+2023-07-17 16:11:26,216 - INFO - BEGIN (implicit)
+2023-07-17 16:11:26,216 - INFO - DESCRIBE `books`.`authors`
+2023-07-17 16:11:26,216 - INFO - [raw sql] {}
+2023-07-17 16:11:26,232 - INFO - DESCRIBE `books`.`books`
+2023-07-17 16:11:26,232 - INFO - [raw sql] {}
+2023-07-17 16:11:26,232 - INFO - DESCRIBE `books`.`bookauthors`
+2023-07-17 16:11:26,232 - INFO - [raw sql] {}
+2023-07-17 16:11:26,232 - INFO - COMMIT
+2023-07-17 16:11:57,281 - INFO - SELECT DATABASE()
+2023-07-17 16:11:57,281 - INFO - [raw sql] {}
+2023-07-17 16:11:57,281 - INFO - SELECT @@sql_mode
+2023-07-17 16:11:57,281 - INFO - [raw sql] {}
+2023-07-17 16:11:57,296 - INFO - SELECT @@lower_case_table_names
+2023-07-17 16:11:57,296 - INFO - [raw sql] {}
+2023-07-17 16:11:57,296 - INFO - BEGIN (implicit)
+2023-07-17 16:11:57,296 - INFO - DESCRIBE `books`.`authors`
+2023-07-17 16:11:57,296 - INFO - [raw sql] {}
+2023-07-17 16:11:57,296 - INFO - DESCRIBE `books`.`books`
+2023-07-17 16:11:57,296 - INFO - [raw sql] {}
+2023-07-17 16:11:57,312 - INFO - DESCRIBE `books`.`bookauthors`
+2023-07-17 16:11:57,316 - INFO - [raw sql] {}
+2023-07-17 16:11:57,321 - INFO - COMMIT
+2023-07-17 16:12:34 - INFO - SELECT DATABASE()
+2023-07-17 16:12:34 - INFO - [raw sql] {}
+2023-07-17 16:12:34 - INFO - SELECT @@sql_mode
+2023-07-17 16:12:34 - INFO - [raw sql] {}
+2023-07-17 16:12:34 - INFO - SELECT @@lower_case_table_names
+2023-07-17 16:12:34 - INFO - [raw sql] {}
+2023-07-17 16:12:34 - INFO - BEGIN (implicit)
+2023-07-17 16:12:34 - INFO - DESCRIBE `books`.`authors`
+2023-07-17 16:12:34 - INFO - [raw sql] {}
+2023-07-17 16:12:34 - INFO - DESCRIBE `books`.`books`
+2023-07-17 16:12:34 - INFO - [raw sql] {}
+2023-07-17 16:12:34 - INFO - DESCRIBE `books`.`bookauthors`
+2023-07-17 16:12:34 - INFO - [raw sql] {}
+2023-07-17 16:12:34 - INFO - COMMIT
+2023-07-17 16:12:34 - INFO - BEGIN (implicit)
+2023-07-17 16:12:34 - INFO - SELECT books.book_id, books.title, books.number_of_pages 
+FROM books 
+WHERE books.title = %(title_1)s AND books.number_of_pages = %(number_of_pages_1)s
+2023-07-17 16:12:34 - INFO - [generated in 0.00142s] {'title_1': 'DeWhether goodad', 'number_of_pages_1': 324}
+2023-07-17 16:12:34 - INFO - Book has already been added.
+2023-07-17 16:12:34 - INFO - ROLLBACK
