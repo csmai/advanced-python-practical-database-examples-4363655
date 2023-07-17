@@ -1,10 +1,12 @@
 from sqlalchemy.orm import registry, relationship, Session
 from sqlalchemy import Column, String, Integer, create_engine, ForeignKey, select
 import os
+import logging
 
 password = os.getenv("P4PASSWD")
+
 engine = create_engine(
-    "mysql+mysqlconnector://root:{password}@localhost:3306/books", echo=True
+    f"mysql+mysqlconnector://root:{password}@localhost:3306/books", echo=True
 )
 
 mapper_registry = registry()
@@ -61,37 +63,54 @@ class BookAuthor(Base):
 Base.metadata.create_all(engine)
 
 
-def add_book(book: Book, author: Author):
+def add_book(author: Author, book: Book):
     with Session(engine) as session:
+        logging.info(
+            "Check if the book already exist %s %s", book.title, book.number_of_pages
+        )
         existing_book = session.execute(
-            select(Book).filter(
-                Book.title == book.title, Book.number_of_pages == book.number_of_pages
+            select(Book).filter_by(
+                title=book.title, number_of_pages=book.number_of_pages
             )
         ).scalar()
+
+        logging.info(
+            "Check if the book already exist. Existing book: %s", existing_book
+        )
+
         if existing_book is not None:
-            print("Book has already been added.")
+            logging.info("Book already exists.")
             return
-        print("Book does not exist. Adding book")
+
+        logging.info("Add the book")
         session.add(book)
+        logging.info("Book added")
+
+        logging.info(
+            "Check if the author already exists %s %s",
+            author.first_name,
+            author.last_name,
+        )
 
         existing_author = session.execute(
-            select(Author).filter(
-                Author.first_name == author.first_name,
-                Author.last_name == author.last_name,
+            select(Author).filter_by(
+                first_name=author.first_name, last_name=author.last_name
             )
         ).scalar()
-        if existing_author is not None:
-            print("Author has already been added")
-            session.flush()
-            pairing = BookAuthor(
-                author_id=existing_author.author_id, book_id=book.book_id
-            )
-        else:
-            print("Author does not exist! Adding author")
-            session.add(author)
-            session.flush()
-            pairing = BookAuthor(author_id=author.author_id, book_id=book.book_id)
 
+        logging.info("Add an author if needed")
+        if existing_author is not None:
+            logging.info("Author already added. Adding Book.")
+            author_id = existing_author.author_id
+        else:
+            logging.info("Adding Author")
+            session.add(author)
+            logging.info("Author added")
+            session.flush()
+            author_id = author.author_id
+
+        # Add the pair to the bookauthors table
+        pairing = BookAuthor(author_id=author_id, book_id=book.book_id)
         session.add(pairing)
+        logging.info("Book-Author pair added")
         session.commit()
-        print("New pairing added " + str(pairing))
