@@ -63,7 +63,7 @@ class BookAuthor(Base):
 Base.metadata.create_all(engine)
 
 
-def add_book(author: Author, book: Book):
+def add_book(book: Book, author: Author):
     with Session(engine) as session:
         logging.info(
             "Check if the book already exist %s %s", book.title, book.number_of_pages

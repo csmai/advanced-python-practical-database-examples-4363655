@@ -4,7 +4,12 @@ import database
 import logging
 
 # Configure logging
-logging.basicConfig(level=logging.INFO, filename="server_logs.log")
+logging.basicConfig(
+    level=logging.INFO,
+    filename="server_logs.log",
+    format="%(asctime)s - %(levelname)s - %(message)s",
+    datefmt="%Y-%m-%d %H:%M:%S",
+)
 logger = logging.getLogger(__name__)
 
 app = FastAPI()
