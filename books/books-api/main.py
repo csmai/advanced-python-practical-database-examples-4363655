@@ -28,9 +28,11 @@ def create_book(request: schemas.BookAuthorPayload):
         logging.info("Adding Book: %s with %d pages.", book.title, book.number_of_pages)
         logging.info("Adding Author: %s %s", author.first_name, author.last_name)
 
-        database.add_book(author, book)
+        database.add_book(book, author)
 
-        response_msg = f"""New Book added: {book.title} with {str(book.number_of_pages)} pages. Author: {author.first_name} {author.last_name}"""
+        response_msg = f"New book added: {request.book.title} with {str(request.book.number_of_pages)} pages. Author: {request.author.first_name} {request.author.last_name}"
+        # This caused an error:
+        # f"""New Book added: {book.title} with {str(book.number_of_pages)} pages. Author: {author.first_name} {author.last_name}"""
         logging.info(response_msg)
         return response_msg
     except Exception as e:

@@ -273,3 +273,182 @@ WHERE books.title = %(title_1)s AND books.number_of_pages = %(number_of_pages_1)
 2023-07-17 16:12:34 - INFO - [generated in 0.00142s] {'title_1': 'DeWhether goodad', 'number_of_pages_1': 324}
 2023-07-17 16:12:34 - INFO - Book has already been added.
 2023-07-17 16:12:34 - INFO - ROLLBACK
+2023-07-17 16:17:21 - INFO - SELECT DATABASE()
+2023-07-17 16:17:21 - INFO - [raw sql] {}
+2023-07-17 16:17:21 - INFO - SELECT @@sql_mode
+2023-07-17 16:17:21 - INFO - [raw sql] {}
+2023-07-17 16:17:21 - INFO - SELECT @@lower_case_table_names
+2023-07-17 16:17:21 - INFO - [raw sql] {}
+2023-07-17 16:17:21 - INFO - BEGIN (implicit)
+2023-07-17 16:17:21 - INFO - DESCRIBE `books`.`authors`
+2023-07-17 16:17:21 - INFO - [raw sql] {}
+2023-07-17 16:17:21 - INFO - DESCRIBE `books`.`books`
+2023-07-17 16:17:21 - INFO - [raw sql] {}
+2023-07-17 16:17:21 - INFO - DESCRIBE `books`.`bookauthors`
+2023-07-17 16:17:21 - INFO - [raw sql] {}
+2023-07-17 16:17:21 - INFO - COMMIT
+2023-07-17 16:17:59 - ERROR - An error occurred while adding a new book: 'Author' object has no attribute 'title'
+2023-07-17 16:19:09 - ERROR - An error occurred while adding a new book: 'Author' object has no attribute 'title'
+2023-07-17 16:22:02 - ERROR - An error occurred while adding a new book: 'Author' object has no attribute 'title'
+2023-07-17 16:25:58 - INFO - Check if the book already exist Element 324
+2023-07-17 16:25:58 - INFO - BEGIN (implicit)
+2023-07-17 16:25:58 - INFO - SELECT books.book_id, books.title, books.number_of_pages 
+FROM books 
+WHERE books.title = %(title_1)s AND books.number_of_pages = %(number_of_pages_1)s
+2023-07-17 16:25:58 - INFO - [generated in 0.00141s] {'title_1': 'Element', 'number_of_pages_1': 324}
+2023-07-17 16:25:58 - INFO - Check if the book already exist. Existing book: None
+2023-07-17 16:25:58 - INFO - Add the book
+2023-07-17 16:25:58 - INFO - Book added
+2023-07-17 16:25:58 - INFO - Check if the author already exists Brande New 
+2023-07-17 16:25:58 - INFO - INSERT INTO books (title, number_of_pages) VALUES (%(title)s, %(number_of_pages)s)
+2023-07-17 16:25:58 - INFO - [generated in 0.00085s] {'title': 'Element', 'number_of_pages': 324}
+2023-07-17 16:25:58 - INFO - SELECT authors.author_id, authors.first_name, authors.last_name 
+FROM authors 
+WHERE authors.first_name = %(first_name_1)s AND authors.last_name = %(last_name_1)s
+2023-07-17 16:25:58 - INFO - [generated in 0.00120s] {'first_name_1': 'Brande', 'last_name_1': 'New '}
+2023-07-17 16:25:58 - INFO - Add an author if needed
+2023-07-17 16:25:58 - INFO - Adding Author
+2023-07-17 16:25:58 - INFO - Author added
+2023-07-17 16:25:58 - INFO - INSERT INTO authors (first_name, last_name) VALUES (%(first_name)s, %(last_name)s)
+2023-07-17 16:25:58 - INFO - [generated in 0.00087s] {'first_name': 'Brande', 'last_name': 'New '}
+2023-07-17 16:25:58 - INFO - Book-Author pair added
+2023-07-17 16:25:58 - INFO - INSERT INTO bookauthors (author_id, book_id) VALUES (%(author_id)s, %(book_id)s)
+2023-07-17 16:25:58 - INFO - [generated in 0.00143s] {'author_id': 10, 'book_id': 16}
+2023-07-17 16:25:58 - INFO - COMMIT
+2023-07-17 16:27:30 - INFO - Check if the book already exist Element2 324
+2023-07-17 16:27:30 - INFO - BEGIN (implicit)
+2023-07-17 16:27:30 - INFO - SELECT books.book_id, books.title, books.number_of_pages 
+FROM books 
+WHERE books.title = %(title_1)s AND books.number_of_pages = %(number_of_pages_1)s
+2023-07-17 16:27:30 - INFO - [cached since 92.58s ago] {'title_1': 'Element2', 'number_of_pages_1': 324}
+2023-07-17 16:27:30 - INFO - Check if the book already exist. Existing book: None
+2023-07-17 16:27:30 - INFO - Add the book
+2023-07-17 16:27:30 - INFO - Book added
+2023-07-17 16:27:30 - INFO - Check if the author already exists Brand New 
+2023-07-17 16:27:30 - INFO - INSERT INTO books (title, number_of_pages) VALUES (%(title)s, %(number_of_pages)s)
+2023-07-17 16:27:30 - INFO - [cached since 92.58s ago] {'title': 'Element2', 'number_of_pages': 324}
+2023-07-17 16:27:30 - INFO - SELECT authors.author_id, authors.first_name, authors.last_name 
+FROM authors 
+WHERE authors.first_name = %(first_name_1)s AND authors.last_name = %(last_name_1)s
+2023-07-17 16:27:30 - INFO - [cached since 92.58s ago] {'first_name_1': 'Brand', 'last_name_1': 'New '}
+2023-07-17 16:27:30 - INFO - Add an author if needed
+2023-07-17 16:27:30 - INFO - Adding Author
+2023-07-17 16:27:30 - INFO - Author added
+2023-07-17 16:27:30 - INFO - INSERT INTO authors (first_name, last_name) VALUES (%(first_name)s, %(last_name)s)
+2023-07-17 16:27:30 - INFO - [cached since 92.58s ago] {'first_name': 'Brand', 'last_name': 'New '}
+2023-07-17 16:27:30 - INFO - Book-Author pair added
+2023-07-17 16:27:30 - INFO - INSERT INTO bookauthors (author_id, book_id) VALUES (%(author_id)s, %(book_id)s)
+2023-07-17 16:27:30 - INFO - [cached since 92.58s ago] {'author_id': 11, 'book_id': 17}
+2023-07-17 16:27:30 - INFO - COMMIT
+2023-07-17 16:28:16 - INFO - Check if the book already exist The Bug 324
+2023-07-17 16:28:16 - INFO - BEGIN (implicit)
+2023-07-17 16:28:16 - INFO - SELECT books.book_id, books.title, books.number_of_pages 
+FROM books 
+WHERE books.title = %(title_1)s AND books.number_of_pages = %(number_of_pages_1)s
+2023-07-17 16:28:16 - INFO - [cached since 138.4s ago] {'title_1': 'The Bug', 'number_of_pages_1': 324}
+2023-07-17 16:28:16 - INFO - Check if the book already exist. Existing book: None
+2023-07-17 16:28:16 - INFO - Add the book
+2023-07-17 16:28:16 - INFO - Book added
+2023-07-17 16:28:16 - INFO - Check if the author already exists This was Not 
+2023-07-17 16:28:16 - INFO - INSERT INTO books (title, number_of_pages) VALUES (%(title)s, %(number_of_pages)s)
+2023-07-17 16:28:16 - INFO - [cached since 138.4s ago] {'title': 'The Bug', 'number_of_pages': 324}
+2023-07-17 16:28:16 - INFO - SELECT authors.author_id, authors.first_name, authors.last_name 
+FROM authors 
+WHERE authors.first_name = %(first_name_1)s AND authors.last_name = %(last_name_1)s
+2023-07-17 16:28:16 - INFO - [cached since 138.4s ago] {'first_name_1': 'This was', 'last_name_1': 'Not '}
+2023-07-17 16:28:16 - INFO - Add an author if needed
+2023-07-17 16:28:16 - INFO - Adding Author
+2023-07-17 16:28:16 - INFO - Author added
+2023-07-17 16:28:16 - INFO - INSERT INTO authors (first_name, last_name) VALUES (%(first_name)s, %(last_name)s)
+2023-07-17 16:28:16 - INFO - [cached since 138.4s ago] {'first_name': 'This was', 'last_name': 'Not '}
+2023-07-17 16:28:16 - INFO - Book-Author pair added
+2023-07-17 16:28:16 - INFO - INSERT INTO bookauthors (author_id, book_id) VALUES (%(author_id)s, %(book_id)s)
+2023-07-17 16:28:16 - INFO - [cached since 138.4s ago] {'author_id': 12, 'book_id': 18}
+2023-07-17 16:28:16 - INFO - COMMIT
+2023-07-17 16:34:09,956 - INFO - Adding Book: yddhfth with 324 pages.
+2023-07-17 16:34:09,957 - INFO - Adding Author: GGGGGG dgdfgdfg 
+2023-07-17 16:34:09,958 - ERROR - Error adding book: 'Author' object has no attribute 'title'
+2023-07-17 16:34:50,034 - INFO - Adding Book: yddhfth with 324 pages.
+2023-07-17 16:34:50,034 - INFO - Adding Author: GGGGGG dgdfgdfg 
+2023-07-17 16:34:50,034 - INFO - Check if the book already exist yddhfth 324
+2023-07-17 16:34:50,034 - INFO - BEGIN (implicit)
+2023-07-17 16:34:50,034 - INFO - SELECT books.book_id, books.title, books.number_of_pages 
+FROM books 
+WHERE books.title = %(title_1)s AND books.number_of_pages = %(number_of_pages_1)s
+2023-07-17 16:34:50,034 - INFO - [generated in 0.00097s] {'title_1': 'yddhfth', 'number_of_pages_1': 324}
+2023-07-17 16:34:50,034 - INFO - Check if the book already exist. Existing book: None
+2023-07-17 16:34:50,034 - INFO - Add the book
+2023-07-17 16:34:50,034 - INFO - Book added
+2023-07-17 16:34:50,034 - INFO - Check if the author already exists GGGGGG dgdfgdfg 
+2023-07-17 16:34:50,049 - INFO - INSERT INTO books (title, number_of_pages) VALUES (%(title)s, %(number_of_pages)s)
+2023-07-17 16:34:50,049 - INFO - [generated in 0.00092s] {'title': 'yddhfth', 'number_of_pages': 324}
+2023-07-17 16:34:50,049 - INFO - SELECT authors.author_id, authors.first_name, authors.last_name 
+FROM authors 
+WHERE authors.first_name = %(first_name_1)s AND authors.last_name = %(last_name_1)s
+2023-07-17 16:34:50,049 - INFO - [generated in 0.00517s] {'first_name_1': 'GGGGGG', 'last_name_1': 'dgdfgdfg '}
+2023-07-17 16:34:50,049 - INFO - Add an author if needed
+2023-07-17 16:34:50,049 - INFO - Adding Author
+2023-07-17 16:34:50,049 - INFO - Author added
+2023-07-17 16:34:50,049 - INFO - INSERT INTO authors (first_name, last_name) VALUES (%(first_name)s, %(last_name)s)
+2023-07-17 16:34:50,065 - INFO - [generated in 0.00094s] {'first_name': 'GGGGGG', 'last_name': 'dgdfgdfg '}
+2023-07-17 16:34:50,065 - INFO - Book-Author pair added
+2023-07-17 16:34:50,065 - INFO - INSERT INTO bookauthors (author_id, book_id) VALUES (%(author_id)s, %(book_id)s)
+2023-07-17 16:34:50,065 - INFO - [generated in 0.00129s] {'author_id': 13, 'book_id': 19}
+2023-07-17 16:34:50,065 - INFO - COMMIT
+2023-07-17 16:34:50,065 - ERROR - Error adding book: Instance <Book at 0x20571117670> is not bound to a Session; attribute refresh operation cannot proceed (Background on this error at: https://sqlalche.me/e/20/bhk3)
+2023-07-17 16:38:09,830 - INFO - Adding Book: eeee with 324 pages.
+2023-07-17 16:38:09,830 - INFO - Adding Author: dfgdfgvdf dsdgzjuu 
+2023-07-17 16:38:09,830 - INFO - Check if the book already exist eeee 324
+2023-07-17 16:38:09,832 - INFO - BEGIN (implicit)
+2023-07-17 16:38:09,837 - INFO - SELECT books.book_id, books.title, books.number_of_pages 
+FROM books 
+WHERE books.title = %(title_1)s AND books.number_of_pages = %(number_of_pages_1)s
+2023-07-17 16:38:09,838 - INFO - [generated in 0.00166s] {'title_1': 'eeee', 'number_of_pages_1': 324}
+2023-07-17 16:38:09,840 - INFO - Check if the book already exist. Existing book: None
+2023-07-17 16:38:09,841 - INFO - Add the book
+2023-07-17 16:38:09,841 - INFO - Book added
+2023-07-17 16:38:09,841 - INFO - Check if the author already exists dfgdfgvdf dsdgzjuu 
+2023-07-17 16:38:09,844 - INFO - INSERT INTO books (title, number_of_pages) VALUES (%(title)s, %(number_of_pages)s)
+2023-07-17 16:38:09,845 - INFO - [generated in 0.00089s] {'title': 'eeee', 'number_of_pages': 324}
+2023-07-17 16:38:09,849 - INFO - SELECT authors.author_id, authors.first_name, authors.last_name 
+FROM authors 
+WHERE authors.first_name = %(first_name_1)s AND authors.last_name = %(last_name_1)s
+2023-07-17 16:38:09,850 - INFO - [generated in 0.00096s] {'first_name_1': 'dfgdfgvdf', 'last_name_1': 'dsdgzjuu '}
+2023-07-17 16:38:09,852 - INFO - Add an author if needed
+2023-07-17 16:38:09,852 - INFO - Adding Author
+2023-07-17 16:38:09,852 - INFO - Author added
+2023-07-17 16:38:09,854 - INFO - INSERT INTO authors (first_name, last_name) VALUES (%(first_name)s, %(last_name)s)
+2023-07-17 16:38:09,855 - INFO - [generated in 0.00095s] {'first_name': 'dfgdfgvdf', 'last_name': 'dsdgzjuu '}
+2023-07-17 16:38:09,860 - INFO - Book-Author pair added
+2023-07-17 16:38:09,862 - INFO - INSERT INTO bookauthors (author_id, book_id) VALUES (%(author_id)s, %(book_id)s)
+2023-07-17 16:38:09,863 - INFO - [generated in 0.00089s] {'author_id': 14, 'book_id': 20}
+2023-07-17 16:38:09,867 - INFO - COMMIT
+2023-07-17 16:38:09,875 - INFO - New book added
+2023-07-17 16:44:37,571 - INFO - Adding Book: kjhkjhk with 324 pages.
+2023-07-17 16:44:37,571 - INFO - Adding Author: fsff ljk 
+2023-07-17 16:44:37,571 - INFO - Check if the book already exist kjhkjhk 324
+2023-07-17 16:44:37,573 - INFO - BEGIN (implicit)
+2023-07-17 16:44:37,581 - INFO - SELECT books.book_id, books.title, books.number_of_pages 
+FROM books 
+WHERE books.title = %(title_1)s AND books.number_of_pages = %(number_of_pages_1)s
+2023-07-17 16:44:37,582 - INFO - [generated in 0.00174s] {'title_1': 'kjhkjhk', 'number_of_pages_1': 324}
+2023-07-17 16:44:37,584 - INFO - Check if the book already exist. Existing book: None
+2023-07-17 16:44:37,585 - INFO - Add the book
+2023-07-17 16:44:37,585 - INFO - Book added
+2023-07-17 16:44:37,585 - INFO - Check if the author already exists fsff ljk 
+2023-07-17 16:44:37,588 - INFO - INSERT INTO books (title, number_of_pages) VALUES (%(title)s, %(number_of_pages)s)
+2023-07-17 16:44:37,590 - INFO - [generated in 0.00290s] {'title': 'kjhkjhk', 'number_of_pages': 324}
+2023-07-17 16:44:37,596 - INFO - SELECT authors.author_id, authors.first_name, authors.last_name 
+FROM authors 
+WHERE authors.first_name = %(first_name_1)s AND authors.last_name = %(last_name_1)s
+2023-07-17 16:44:37,596 - INFO - [generated in 0.00107s] {'first_name_1': 'fsff', 'last_name_1': 'ljk '}
+2023-07-17 16:44:37,598 - INFO - Add an author if needed
+2023-07-17 16:44:37,599 - INFO - Adding Author
+2023-07-17 16:44:37,599 - INFO - Author added
+2023-07-17 16:44:37,601 - INFO - INSERT INTO authors (first_name, last_name) VALUES (%(first_name)s, %(last_name)s)
+2023-07-17 16:44:37,603 - INFO - [generated in 0.00276s] {'first_name': 'fsff', 'last_name': 'ljk '}
+2023-07-17 16:44:37,610 - INFO - Book-Author pair added
+2023-07-17 16:44:37,612 - INFO - INSERT INTO bookauthors (author_id, book_id) VALUES (%(author_id)s, %(book_id)s)
+2023-07-17 16:44:37,612 - INFO - [generated in 0.00095s] {'author_id': 15, 'book_id': 21}
+2023-07-17 16:44:37,615 - INFO - COMMIT
+2023-07-17 16:44:37,622 - INFO - New book added: kjhkjhk with 324 pages. Author: fsff ljk 
