@@ -2,3 +2,4 @@
 node_modules
 .tmp
 npm-debug.log
+server_logs.log
