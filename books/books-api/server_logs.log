@@ -805,3 +805,23 @@ FROM bookauthors INNER JOIN books ON books.book_id = %(book_id_1)s INNER JOIN au
 2023-07-18 17:11:04,479 - INFO - Getting the book data title: American Gods, number of pages: 580
 2023-07-18 17:11:04,479 - INFO - Getting the author data Neil Gaiman
 2023-07-18 17:11:04,479 - INFO - ROLLBACK
+2023-07-18 17:26:34,430 - INFO - Getting data from book with id 8.
+2023-07-18 17:26:34,431 - INFO - 8
+2023-07-18 17:26:34,431 - INFO - <class 'int'>
+2023-07-18 17:26:34,431 - INFO - Getting the book's data with id:8
+2023-07-18 17:26:34,433 - INFO - BEGIN (implicit)
+2023-07-18 17:26:34,450 - INFO - SELECT books.book_id, books.title, books.number_of_pages, authors.author_id, authors.first_name, authors.last_name 
+FROM bookauthors INNER JOIN books ON books.book_id = %(book_id_1)s INNER JOIN authors ON authors.author_id = bookauthors.author_id
+2023-07-18 17:26:34,452 - INFO - [generated in 0.00242s] {'book_id_1': 8}
+2023-07-18 17:26:34,457 - INFO - Getting the book data title: Something, number of pages: 248
+2023-07-18 17:26:34,457 - INFO - Getting the author data Neil Gaiman
+2023-07-18 17:26:34,457 - INFO - ROLLBACK
+2023-07-18 17:26:38,337 - INFO - Getting data from book with id 2.
+2023-07-18 17:26:38,337 - INFO - 2
+2023-07-18 17:26:38,337 - INFO - <class 'int'>
+2023-07-18 17:26:38,338 - INFO - Getting the book's data with id:2
+2023-07-18 17:26:38,339 - INFO - BEGIN (implicit)
+2023-07-18 17:26:38,340 - INFO - SELECT books.book_id, books.title, books.number_of_pages, authors.author_id, authors.first_name, authors.last_name 
+FROM bookauthors INNER JOIN books ON books.book_id = %(book_id_1)s INNER JOIN authors ON authors.author_id = bookauthors.author_id
+2023-07-18 17:26:38,341 - INFO - [cached since 3.891s ago] {'book_id_1': 2}
+2023-07-18 17:26:38,346 - INFO - ROLLBACK

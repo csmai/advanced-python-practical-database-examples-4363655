@@ -1,4 +1,4 @@
-from fastapi import FastAPI
+from fastapi import FastAPI, HTTPException
 import schemas
 import database
 import logging
@@ -27,10 +27,10 @@ def get_book_by_id(book_id: int):
         found_book, found_author = database.get_book_author_data(book_id)
         # return: only strings!
         return f"Book: {found_book.title} Num. of pages: {found_book.number_of_pages}, Author: {found_author.first_name} {found_author.last_name}"
-    except Exception as e:
-        # Log any exceptions that occur during book creation
-        logging.error("Error getting book: %s", str(e))
-        return "Failed to get book. Please check the server logs for details."
+    except:
+        raise HTTPException(
+            status_code=404, detail=f"Error getting book with id {book_id}."
+        )
 
 
 @app.post("/book/")
