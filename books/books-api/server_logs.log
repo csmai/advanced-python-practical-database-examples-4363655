@@ -671,3 +671,94 @@ WHERE authors.author_id = %(author_id_1)s
 2023-07-17 19:41:53,985 - INFO - [generated in 0.00067s] {'author_id_1': 1}
 2023-07-17 19:41:53,986 - INFO - Getting the author data Neil Gaiman
 2023-07-17 19:41:53,986 - INFO - ROLLBACK
+2023-07-17 19:43:21,157 - INFO - Getting data from book with id 10.
+2023-07-17 19:43:21,157 - INFO - 10
+2023-07-17 19:43:21,157 - INFO - <class 'int'>
+2023-07-17 19:43:21,158 - INFO - Getting the book's data with id:10
+2023-07-17 19:43:21,159 - INFO - BEGIN (implicit)
+2023-07-17 19:43:21,165 - INFO - SELECT books.book_id, books.title, books.number_of_pages 
+FROM books 
+WHERE books.book_id = %(book_id_1)s
+2023-07-17 19:43:21,166 - INFO - [generated in 0.00077s] {'book_id_1': 10}
+2023-07-17 19:43:21,167 - INFO - Getting the book data title: Paradign, number of pages: 612
+2023-07-17 19:43:21,171 - INFO - SELECT bookauthors.bookauthor_id, bookauthors.author_id, bookauthors.book_id 
+FROM bookauthors 
+WHERE bookauthors.book_id = %(book_id_1)s
+2023-07-17 19:43:21,173 - INFO - [generated in 0.00195s] {'book_id_1': 10}
+2023-07-17 19:43:21,176 - INFO - SELECT authors.author_id, authors.first_name, authors.last_name 
+FROM authors 
+WHERE authors.author_id = %(author_id_1)s
+2023-07-17 19:43:21,176 - INFO - [generated in 0.00082s] {'author_id_1': 4}
+2023-07-17 19:43:21,178 - INFO - Getting the author data New Very
+2023-07-17 19:43:21,178 - INFO - ROLLBACK
+2023-07-17 19:43:33,241 - INFO - Getting data from book with id 3.
+2023-07-17 19:43:33,241 - INFO - 3
+2023-07-17 19:43:33,241 - INFO - <class 'int'>
+2023-07-17 19:43:33,242 - INFO - Getting the book's data with id:3
+2023-07-17 19:43:33,242 - INFO - BEGIN (implicit)
+2023-07-17 19:43:33,243 - INFO - SELECT books.book_id, books.title, books.number_of_pages 
+FROM books 
+WHERE books.book_id = %(book_id_1)s
+2023-07-17 19:43:33,243 - INFO - [cached since 12.08s ago] {'book_id_1': 3}
+2023-07-17 19:43:33,244 - INFO - Getting the book data title: Neverwhere, number of pages: 221
+2023-07-17 19:43:33,245 - INFO - SELECT bookauthors.bookauthor_id, bookauthors.author_id, bookauthors.book_id 
+FROM bookauthors 
+WHERE bookauthors.book_id = %(book_id_1)s
+2023-07-17 19:43:33,246 - INFO - [cached since 12.08s ago] {'book_id_1': 3}
+2023-07-17 19:43:33,248 - INFO - SELECT authors.author_id, authors.first_name, authors.last_name 
+FROM authors 
+WHERE authors.author_id IS NULL
+2023-07-17 19:43:33,250 - INFO - [generated in 0.00184s] {}
+2023-07-17 19:43:33,252 - INFO - ROLLBACK
+2023-07-17 19:43:33,253 - ERROR - Error getting book: cannot unpack non-iterable NoneType object
+2023-07-17 19:43:36,351 - INFO - Getting data from book with id 4.
+2023-07-17 19:43:36,351 - INFO - 4
+2023-07-17 19:43:36,351 - INFO - <class 'int'>
+2023-07-17 19:43:36,351 - INFO - Getting the book's data with id:4
+2023-07-17 19:43:36,351 - INFO - BEGIN (implicit)
+2023-07-17 19:43:36,353 - INFO - SELECT books.book_id, books.title, books.number_of_pages 
+FROM books 
+WHERE books.book_id = %(book_id_1)s
+2023-07-17 19:43:36,353 - INFO - [cached since 15.19s ago] {'book_id_1': 4}
+2023-07-17 19:43:36,354 - INFO - ROLLBACK
+2023-07-17 19:43:36,355 - ERROR - Error getting book: cannot unpack non-iterable NoneType object
+2023-07-17 19:43:39,873 - INFO - Getting data from book with id 7.
+2023-07-17 19:43:39,873 - INFO - 7
+2023-07-17 19:43:39,873 - INFO - <class 'int'>
+2023-07-17 19:43:39,873 - INFO - Getting the book's data with id:7
+2023-07-17 19:43:39,874 - INFO - BEGIN (implicit)
+2023-07-17 19:43:39,875 - INFO - SELECT books.book_id, books.title, books.number_of_pages 
+FROM books 
+WHERE books.book_id = %(book_id_1)s
+2023-07-17 19:43:39,875 - INFO - [cached since 18.71s ago] {'book_id_1': 7}
+2023-07-17 19:43:39,877 - INFO - Getting the book data title: FFF, number of pages: 221
+2023-07-17 19:43:39,878 - INFO - SELECT bookauthors.bookauthor_id, bookauthors.author_id, bookauthors.book_id 
+FROM bookauthors 
+WHERE bookauthors.book_id = %(book_id_1)s
+2023-07-17 19:43:39,878 - INFO - [cached since 18.71s ago] {'book_id_1': 7}
+2023-07-17 19:43:39,880 - INFO - SELECT authors.author_id, authors.first_name, authors.last_name 
+FROM authors 
+WHERE authors.author_id IS NULL
+2023-07-17 19:43:39,880 - INFO - [cached since 6.632s ago] {}
+2023-07-17 19:43:39,881 - INFO - ROLLBACK
+2023-07-17 19:43:39,882 - ERROR - Error getting book: cannot unpack non-iterable NoneType object
+2023-07-17 19:43:42,861 - INFO - Getting data from book with id 8.
+2023-07-17 19:43:42,861 - INFO - 8
+2023-07-17 19:43:42,861 - INFO - <class 'int'>
+2023-07-17 19:43:42,862 - INFO - Getting the book's data with id:8
+2023-07-17 19:43:42,862 - INFO - BEGIN (implicit)
+2023-07-17 19:43:42,886 - INFO - SELECT books.book_id, books.title, books.number_of_pages 
+FROM books 
+WHERE books.book_id = %(book_id_1)s
+2023-07-17 19:43:42,886 - INFO - [cached since 21.72s ago] {'book_id_1': 8}
+2023-07-17 19:43:42,887 - INFO - Getting the book data title: Something, number of pages: 248
+2023-07-17 19:43:42,890 - INFO - SELECT bookauthors.bookauthor_id, bookauthors.author_id, bookauthors.book_id 
+FROM bookauthors 
+WHERE bookauthors.book_id = %(book_id_1)s
+2023-07-17 19:43:42,890 - INFO - [cached since 21.72s ago] {'book_id_1': 8}
+2023-07-17 19:43:42,895 - INFO - SELECT authors.author_id, authors.first_name, authors.last_name 
+FROM authors 
+WHERE authors.author_id = %(author_id_1)s
+2023-07-17 19:43:42,895 - INFO - [cached since 21.72s ago] {'author_id_1': 2}
+2023-07-17 19:43:42,901 - INFO - Getting the author data James Stuart
+2023-07-17 19:43:42,901 - INFO - ROLLBACK
