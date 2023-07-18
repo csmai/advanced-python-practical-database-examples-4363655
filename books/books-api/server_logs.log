@@ -762,3 +762,46 @@ WHERE authors.author_id = %(author_id_1)s
 2023-07-17 19:43:42,895 - INFO - [cached since 21.72s ago] {'author_id_1': 2}
 2023-07-17 19:43:42,901 - INFO - Getting the author data James Stuart
 2023-07-17 19:43:42,901 - INFO - ROLLBACK
+2023-07-18 17:05:08,692 - INFO - Getting data from book with id 8.
+2023-07-18 17:05:08,694 - INFO - 8
+2023-07-18 17:05:08,694 - INFO - <class 'int'>
+2023-07-18 17:05:08,694 - INFO - Getting the book's data with id:8
+2023-07-18 17:05:08,696 - INFO - BEGIN (implicit)
+2023-07-18 17:05:08,714 - INFO - SELECT books.book_id, books.title, books.number_of_pages, authors.author_id, authors.first_name, authors.last_name 
+FROM authors INNER JOIN bookauthors ON bookauthors.book_id = %(book_id_1)s AND bookauthors.author_id = authors.author_id INNER JOIN authors ON authors.author_id = bookauthors.author_id, books
+2023-07-18 17:05:08,717 - INFO - [generated in 0.00383s] {'book_id_1': 8}
+2023-07-18 17:05:08,719 - INFO - ROLLBACK
+2023-07-18 17:05:08,720 - ERROR - Error getting book: (mysql.connector.errors.ProgrammingError) 1066 (42000): Not unique table/alias: 'authors'
+[SQL: SELECT books.book_id, books.title, books.number_of_pages, authors.author_id, authors.first_name, authors.last_name 
+FROM authors INNER JOIN bookauthors ON bookauthors.book_id = %(book_id_1)s AND bookauthors.author_id = authors.author_id INNER JOIN authors ON authors.author_id = bookauthors.author_id, books]
+[parameters: {'book_id_1': 8}]
+(Background on this error at: https://sqlalche.me/e/20/f405)
+2023-07-18 17:07:40,497 - INFO - Getting data from book with id 8.
+2023-07-18 17:07:40,499 - INFO - 8
+2023-07-18 17:07:40,500 - INFO - <class 'int'>
+2023-07-18 17:07:40,500 - INFO - Getting the book's data with id:8
+2023-07-18 17:07:40,508 - INFO - BEGIN (implicit)
+2023-07-18 17:07:40,530 - INFO - ROLLBACK
+2023-07-18 17:07:40,532 - ERROR - Error getting book: Can't determine which FROM clause to join from, there are multiple FROMS which can join to this entity. Please use the .select_from() method to establish an explicit left side, as well as providing an explicit ON clause if not present already to help resolve the ambiguity.
+2023-07-18 17:10:55,813 - INFO - Getting data from book with id 8.
+2023-07-18 17:10:55,813 - INFO - 8
+2023-07-18 17:10:55,814 - INFO - <class 'int'>
+2023-07-18 17:10:55,814 - INFO - Getting the book's data with id:8
+2023-07-18 17:10:55,821 - INFO - BEGIN (implicit)
+2023-07-18 17:10:55,850 - INFO - SELECT books.book_id, books.title, books.number_of_pages, authors.author_id, authors.first_name, authors.last_name 
+FROM bookauthors INNER JOIN books ON books.book_id = %(book_id_1)s INNER JOIN authors ON authors.author_id = bookauthors.author_id
+2023-07-18 17:10:55,852 - INFO - [generated in 0.00325s] {'book_id_1': 8}
+2023-07-18 17:10:55,907 - INFO - Getting the book data title: Something, number of pages: 248
+2023-07-18 17:10:55,907 - INFO - Getting the author data Neil Gaiman
+2023-07-18 17:10:55,907 - INFO - ROLLBACK
+2023-07-18 17:11:04,469 - INFO - Getting data from book with id 1.
+2023-07-18 17:11:04,470 - INFO - 1
+2023-07-18 17:11:04,470 - INFO - <class 'int'>
+2023-07-18 17:11:04,470 - INFO - Getting the book's data with id:1
+2023-07-18 17:11:04,471 - INFO - BEGIN (implicit)
+2023-07-18 17:11:04,472 - INFO - SELECT books.book_id, books.title, books.number_of_pages, authors.author_id, authors.first_name, authors.last_name 
+FROM bookauthors INNER JOIN books ON books.book_id = %(book_id_1)s INNER JOIN authors ON authors.author_id = bookauthors.author_id
+2023-07-18 17:11:04,473 - INFO - [cached since 8.624s ago] {'book_id_1': 1}
+2023-07-18 17:11:04,479 - INFO - Getting the book data title: American Gods, number of pages: 580
+2023-07-18 17:11:04,479 - INFO - Getting the author data Neil Gaiman
+2023-07-18 17:11:04,479 - INFO - ROLLBACK

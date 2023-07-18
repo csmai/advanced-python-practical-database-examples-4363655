@@ -1,5 +1,5 @@
 from sqlalchemy.orm import registry, relationship, Session
-from sqlalchemy import Column, String, Integer, create_engine, ForeignKey, select
+from sqlalchemy import Column, String, Integer, create_engine, ForeignKey, select, and_
 import os
 import logging
 
@@ -119,28 +119,26 @@ def add_book(book: Book, author: Author):
 def get_book_author_data(given_id):
     with Session(engine) as session:
         logging.info("Getting the book's data with id:%s", given_id)
-        found_book = session.execute(select(Book).filter_by(book_id=given_id)).scalar()
 
-        if found_book is not None:
+        found_data = session.execute(
+            select(Book, Author)
+            .select_from(BookAuthor)
+            .join(Book, Book.book_id == given_id)
+            .join(Author, Author.author_id == BookAuthor.author_id)
+        ).first()
+
+        if found_data:
+            found_book, found_author = found_data
             logging.info(
                 "Getting the book data title: %s, number of pages: %s",
                 found_book.title,
                 found_book.number_of_pages,
             )
-            found_bookauthor = session.execute(
-                select(BookAuthor).filter_by(book_id=given_id)
-            ).scalar()
+            logging.info(
+                "Getting the author data %s %s",
+                found_author.first_name,
+                found_author.last_name,
+            )
+            return found_book, found_author
 
-            if found_bookauthor is not None:
-                found_author = session.execute(
-                    select(Author).filter_by(author_id=found_bookauthor.author_id)
-                ).scalar()
-                if found_author is not None:
-                    logging.info(
-                        "Getting the author data %s %s",
-                        found_author.first_name,
-                        found_author.last_name,
-                    )
-                    return found_book, found_author
-        else:
-            return None
+    return None
