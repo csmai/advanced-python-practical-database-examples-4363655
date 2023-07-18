@@ -27,11 +27,9 @@ def get_book_by_id(book_id: int):
         found_book, found_author = database.get_book_author_data(book_id)
         # return: only strings!
         return f"Book: {found_book.title} Num. of pages: {found_book.number_of_pages}, Author: {found_author.first_name} {found_author.last_name}"
-    except:
-        raise HTTPException(
-            status_code=404, detail=f"Error getting book with id {book_id}."
-        )
-
+    except Exception as e:
+        print(e)
+        raise HTTPException(status_code=404, detail=repr(e))
 
 @app.post("/book/")
 def create_book(request: schemas.BookAuthorPayload):
