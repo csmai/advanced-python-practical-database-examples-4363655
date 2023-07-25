@@ -45,13 +45,13 @@ class Task(Base):
         return "<Task(description='{0}')>".format(self.description)
 
 
-Base.metadata.create_all(engine)
+# Base.metadata.create_all(engine)
 
-with Session(engine) as session:
-    clean_house_project = Project(title="Clean house")
-    session.add(clean_house_project)
-    session.flush()
+# with Session(engine) as session:
+#     clean_house_project = Project(title="Clean house")
+#     session.add(clean_house_project)
+#     session.flush()
 
-    task = Task(description="Clean bedroom", project_id=clean_house_project.project_id)
-    session.add(task)
-    session.commit()
+#     task = Task(description="Clean bedroom", project_id=clean_house_project.project_id)
+#     session.add(task)
+#     session.commit()

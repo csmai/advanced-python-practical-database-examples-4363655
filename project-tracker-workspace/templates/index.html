@@ -3,8 +3,9 @@
 		<h3>Projects</h3>
 		<ul>
 			<h3><li><a href="/project/1">Project 1</a></li></h3>
-			<h3><li><a href="/project/2">Project 2</a></li></h3>
-			<h3><li><a href="/project/3">Project 3</a></li></h3>
+			{% for project_id in projects %}
+     		<h3><li><a href="/project/{{ project_id }}">{{ title }}</a></li></h3>
+   			{% endfor %}
 		</ul>
 		<br>
 		<br>

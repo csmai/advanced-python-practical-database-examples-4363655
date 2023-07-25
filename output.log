@@ -162,3 +162,399 @@ INFO:sqlalchemy.engine.Engine:[generated in 0.00072s] {'title': 'Clean house'}
 INFO:sqlalchemy.engine.Engine:INSERT INTO tasks (project_id, description) VALUES (%(project_id)s, %(description)s) RETURNING tasks.task_id
 INFO:sqlalchemy.engine.Engine:[generated in 0.00101s] {'project_id': 6, 'description': 'Clean bedroom'}
 INFO:sqlalchemy.engine.Engine:COMMIT
+INFO:sqlalchemy.engine.Engine:select pg_catalog.version()
+INFO:sqlalchemy.engine.Engine:[raw sql] {}
+INFO:sqlalchemy.engine.Engine:select current_schema()
+INFO:sqlalchemy.engine.Engine:[raw sql] {}
+INFO:sqlalchemy.engine.Engine:show standard_conforming_strings
+INFO:sqlalchemy.engine.Engine:[raw sql] {}
+INFO:sqlalchemy.engine.Engine:BEGIN (implicit)
+INFO:sqlalchemy.engine.Engine:SELECT pg_catalog.pg_class.relname 
+FROM pg_catalog.pg_class JOIN pg_catalog.pg_namespace ON pg_catalog.pg_namespace.oid = pg_catalog.pg_class.relnamespace 
+WHERE pg_catalog.pg_class.relname = %(table_name)s AND pg_catalog.pg_class.relkind = ANY (ARRAY[%(param_1)s, %(param_2)s, %(param_3)s, %(param_4)s, %(param_5)s]) AND pg_catalog.pg_table_is_visible(pg_catalog.pg_class.oid) AND pg_catalog.pg_namespace.nspname != %(nspname_1)s
+INFO:sqlalchemy.engine.Engine:[generated in 0.00139s] {'table_name': 'projects', 'param_1': 'r', 'param_2': 'p', 'param_3': 'f', 'param_4': 'v', 'param_5': 'm', 'nspname_1': 'pg_catalog'}
+INFO:sqlalchemy.engine.Engine:SELECT pg_catalog.pg_class.relname 
+FROM pg_catalog.pg_class JOIN pg_catalog.pg_namespace ON pg_catalog.pg_namespace.oid = pg_catalog.pg_class.relnamespace 
+WHERE pg_catalog.pg_class.relname = %(table_name)s AND pg_catalog.pg_class.relkind = ANY (ARRAY[%(param_1)s, %(param_2)s, %(param_3)s, %(param_4)s, %(param_5)s]) AND pg_catalog.pg_table_is_visible(pg_catalog.pg_class.oid) AND pg_catalog.pg_namespace.nspname != %(nspname_1)s
+INFO:sqlalchemy.engine.Engine:[cached since 0.02238s ago] {'table_name': 'tasks', 'param_1': 'r', 'param_2': 'p', 'param_3': 'f', 'param_4': 'v', 'param_5': 'm', 'nspname_1': 'pg_catalog'}
+INFO:sqlalchemy.engine.Engine:COMMIT
+INFO:sqlalchemy.engine.Engine:BEGIN (implicit)
+INFO:sqlalchemy.engine.Engine:INSERT INTO projects (title) VALUES (%(title)s) RETURNING projects.project_id
+INFO:sqlalchemy.engine.Engine:[generated in 0.00082s] {'title': 'Clean house'}
+INFO:sqlalchemy.engine.Engine:INSERT INTO tasks (project_id, description) VALUES (%(project_id)s, %(description)s) RETURNING tasks.task_id
+INFO:sqlalchemy.engine.Engine:[generated in 0.00131s] {'project_id': 7, 'description': 'Clean bedroom'}
+INFO:sqlalchemy.engine.Engine:COMMIT
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug: * Restarting with stat
+INFO:sqlalchemy.engine.Engine:select pg_catalog.version()
+INFO:sqlalchemy.engine.Engine:[raw sql] {}
+INFO:sqlalchemy.engine.Engine:select current_schema()
+INFO:sqlalchemy.engine.Engine:[raw sql] {}
+INFO:sqlalchemy.engine.Engine:show standard_conforming_strings
+INFO:sqlalchemy.engine.Engine:[raw sql] {}
+INFO:sqlalchemy.engine.Engine:BEGIN (implicit)
+INFO:sqlalchemy.engine.Engine:SELECT pg_catalog.pg_class.relname 
+FROM pg_catalog.pg_class JOIN pg_catalog.pg_namespace ON pg_catalog.pg_namespace.oid = pg_catalog.pg_class.relnamespace 
+WHERE pg_catalog.pg_class.relname = %(table_name)s AND pg_catalog.pg_class.relkind = ANY (ARRAY[%(param_1)s, %(param_2)s, %(param_3)s, %(param_4)s, %(param_5)s]) AND pg_catalog.pg_table_is_visible(pg_catalog.pg_class.oid) AND pg_catalog.pg_namespace.nspname != %(nspname_1)s
+INFO:sqlalchemy.engine.Engine:[generated in 0.00138s] {'table_name': 'projects', 'param_1': 'r', 'param_2': 'p', 'param_3': 'f', 'param_4': 'v', 'param_5': 'm', 'nspname_1': 'pg_catalog'}
+INFO:sqlalchemy.engine.Engine:SELECT pg_catalog.pg_class.relname 
+FROM pg_catalog.pg_class JOIN pg_catalog.pg_namespace ON pg_catalog.pg_namespace.oid = pg_catalog.pg_class.relnamespace 
+WHERE pg_catalog.pg_class.relname = %(table_name)s AND pg_catalog.pg_class.relkind = ANY (ARRAY[%(param_1)s, %(param_2)s, %(param_3)s, %(param_4)s, %(param_5)s]) AND pg_catalog.pg_table_is_visible(pg_catalog.pg_class.oid) AND pg_catalog.pg_namespace.nspname != %(nspname_1)s
+INFO:sqlalchemy.engine.Engine:[cached since 0.02256s ago] {'table_name': 'tasks', 'param_1': 'r', 'param_2': 'p', 'param_3': 'f', 'param_4': 'v', 'param_5': 'm', 'nspname_1': 'pg_catalog'}
+INFO:sqlalchemy.engine.Engine:COMMIT
+INFO:sqlalchemy.engine.Engine:BEGIN (implicit)
+INFO:sqlalchemy.engine.Engine:INSERT INTO projects (title) VALUES (%(title)s) RETURNING projects.project_id
+INFO:sqlalchemy.engine.Engine:[generated in 0.00062s] {'title': 'Clean house'}
+INFO:sqlalchemy.engine.Engine:INSERT INTO tasks (project_id, description) VALUES (%(project_id)s, %(description)s) RETURNING tasks.task_id
+INFO:sqlalchemy.engine.Engine:[generated in 0.00098s] {'project_id': 8, 'description': 'Clean bedroom'}
+INFO:sqlalchemy.engine.Engine:COMMIT
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 280-358-081
+INFO:werkzeug:127.0.0.1 - - [25/Jul/2023 16:58:32] "GET / HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [25/Jul/2023 16:58:32] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+INFO:werkzeug:127.0.0.1 - - [25/Jul/2023 16:58:36] "GET /project/1 HTTP/1.1" 200 -
+INFO:werkzeug: * Detected change in 'e:\\prac_dat_ex\\advanced-python-practical-database-examples-4363655\\project-tracker-workspace\\app.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:sqlalchemy.engine.Engine:select pg_catalog.version()
+INFO:sqlalchemy.engine.Engine:[raw sql] {}
+INFO:sqlalchemy.engine.Engine:select current_schema()
+INFO:sqlalchemy.engine.Engine:[raw sql] {}
+INFO:sqlalchemy.engine.Engine:show standard_conforming_strings
+INFO:sqlalchemy.engine.Engine:[raw sql] {}
+INFO:sqlalchemy.engine.Engine:BEGIN (implicit)
+INFO:sqlalchemy.engine.Engine:SELECT pg_catalog.pg_class.relname 
+FROM pg_catalog.pg_class JOIN pg_catalog.pg_namespace ON pg_catalog.pg_namespace.oid = pg_catalog.pg_class.relnamespace 
+WHERE pg_catalog.pg_class.relname = %(table_name)s AND pg_catalog.pg_class.relkind = ANY (ARRAY[%(param_1)s, %(param_2)s, %(param_3)s, %(param_4)s, %(param_5)s]) AND pg_catalog.pg_table_is_visible(pg_catalog.pg_class.oid) AND pg_catalog.pg_namespace.nspname != %(nspname_1)s
+INFO:sqlalchemy.engine.Engine:[generated in 0.00134s] {'table_name': 'projects', 'param_1': 'r', 'param_2': 'p', 'param_3': 'f', 'param_4': 'v', 'param_5': 'm', 'nspname_1': 'pg_catalog'}
+INFO:sqlalchemy.engine.Engine:SELECT pg_catalog.pg_class.relname 
+FROM pg_catalog.pg_class JOIN pg_catalog.pg_namespace ON pg_catalog.pg_namespace.oid = pg_catalog.pg_class.relnamespace 
+WHERE pg_catalog.pg_class.relname = %(table_name)s AND pg_catalog.pg_class.relkind = ANY (ARRAY[%(param_1)s, %(param_2)s, %(param_3)s, %(param_4)s, %(param_5)s]) AND pg_catalog.pg_table_is_visible(pg_catalog.pg_class.oid) AND pg_catalog.pg_namespace.nspname != %(nspname_1)s
+INFO:sqlalchemy.engine.Engine:[cached since 0.02191s ago] {'table_name': 'tasks', 'param_1': 'r', 'param_2': 'p', 'param_3': 'f', 'param_4': 'v', 'param_5': 'm', 'nspname_1': 'pg_catalog'}
+INFO:sqlalchemy.engine.Engine:COMMIT
+INFO:sqlalchemy.engine.Engine:BEGIN (implicit)
+INFO:sqlalchemy.engine.Engine:INSERT INTO projects (title) VALUES (%(title)s) RETURNING projects.project_id
+INFO:sqlalchemy.engine.Engine:[generated in 0.00075s] {'title': 'Clean house'}
+INFO:sqlalchemy.engine.Engine:INSERT INTO tasks (project_id, description) VALUES (%(project_id)s, %(description)s) RETURNING tasks.task_id
+INFO:sqlalchemy.engine.Engine:[generated in 0.00091s] {'project_id': 9, 'description': 'Clean bedroom'}
+INFO:sqlalchemy.engine.Engine:COMMIT
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 280-358-081
+INFO:werkzeug: * Detected change in 'e:\\prac_dat_ex\\advanced-python-practical-database-examples-4363655\\project-tracker-workspace\\app.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:sqlalchemy.engine.Engine:select pg_catalog.version()
+INFO:sqlalchemy.engine.Engine:[raw sql] {}
+INFO:sqlalchemy.engine.Engine:select current_schema()
+INFO:sqlalchemy.engine.Engine:[raw sql] {}
+INFO:sqlalchemy.engine.Engine:show standard_conforming_strings
+INFO:sqlalchemy.engine.Engine:[raw sql] {}
+INFO:sqlalchemy.engine.Engine:BEGIN (implicit)
+INFO:sqlalchemy.engine.Engine:SELECT pg_catalog.pg_class.relname 
+FROM pg_catalog.pg_class JOIN pg_catalog.pg_namespace ON pg_catalog.pg_namespace.oid = pg_catalog.pg_class.relnamespace 
+WHERE pg_catalog.pg_class.relname = %(table_name)s AND pg_catalog.pg_class.relkind = ANY (ARRAY[%(param_1)s, %(param_2)s, %(param_3)s, %(param_4)s, %(param_5)s]) AND pg_catalog.pg_table_is_visible(pg_catalog.pg_class.oid) AND pg_catalog.pg_namespace.nspname != %(nspname_1)s
+INFO:sqlalchemy.engine.Engine:[generated in 0.00130s] {'table_name': 'projects', 'param_1': 'r', 'param_2': 'p', 'param_3': 'f', 'param_4': 'v', 'param_5': 'm', 'nspname_1': 'pg_catalog'}
+INFO:sqlalchemy.engine.Engine:SELECT pg_catalog.pg_class.relname 
+FROM pg_catalog.pg_class JOIN pg_catalog.pg_namespace ON pg_catalog.pg_namespace.oid = pg_catalog.pg_class.relnamespace 
+WHERE pg_catalog.pg_class.relname = %(table_name)s AND pg_catalog.pg_class.relkind = ANY (ARRAY[%(param_1)s, %(param_2)s, %(param_3)s, %(param_4)s, %(param_5)s]) AND pg_catalog.pg_table_is_visible(pg_catalog.pg_class.oid) AND pg_catalog.pg_namespace.nspname != %(nspname_1)s
+INFO:sqlalchemy.engine.Engine:[cached since 0.02016s ago] {'table_name': 'tasks', 'param_1': 'r', 'param_2': 'p', 'param_3': 'f', 'param_4': 'v', 'param_5': 'm', 'nspname_1': 'pg_catalog'}
+INFO:sqlalchemy.engine.Engine:COMMIT
+INFO:sqlalchemy.engine.Engine:BEGIN (implicit)
+INFO:sqlalchemy.engine.Engine:INSERT INTO projects (title) VALUES (%(title)s) RETURNING projects.project_id
+INFO:sqlalchemy.engine.Engine:[generated in 0.00056s] {'title': 'Clean house'}
+INFO:sqlalchemy.engine.Engine:INSERT INTO tasks (project_id, description) VALUES (%(project_id)s, %(description)s) RETURNING tasks.task_id
+INFO:sqlalchemy.engine.Engine:[generated in 0.00128s] {'project_id': 10, 'description': 'Clean bedroom'}
+INFO:sqlalchemy.engine.Engine:COMMIT
+INFO:sqlalchemy.engine.Engine:select pg_catalog.version()
+INFO:sqlalchemy.engine.Engine:[raw sql] {}
+INFO:sqlalchemy.engine.Engine:select current_schema()
+INFO:sqlalchemy.engine.Engine:[raw sql] {}
+INFO:sqlalchemy.engine.Engine:show standard_conforming_strings
+INFO:sqlalchemy.engine.Engine:[raw sql] {}
+INFO:sqlalchemy.engine.Engine:BEGIN (implicit)
+INFO:sqlalchemy.engine.Engine:SELECT pg_catalog.pg_class.relname 
+FROM pg_catalog.pg_class JOIN pg_catalog.pg_namespace ON pg_catalog.pg_namespace.oid = pg_catalog.pg_class.relnamespace 
+WHERE pg_catalog.pg_class.relname = %(table_name)s AND pg_catalog.pg_class.relkind = ANY (ARRAY[%(param_1)s, %(param_2)s, %(param_3)s, %(param_4)s, %(param_5)s]) AND pg_catalog.pg_table_is_visible(pg_catalog.pg_class.oid) AND pg_catalog.pg_namespace.nspname != %(nspname_1)s
+INFO:sqlalchemy.engine.Engine:[generated in 0.00202s] {'table_name': 'projects', 'param_1': 'r', 'param_2': 'p', 'param_3': 'f', 'param_4': 'v', 'param_5': 'm', 'nspname_1': 'pg_catalog'}
+INFO:sqlalchemy.engine.Engine:SELECT pg_catalog.pg_class.relname 
+FROM pg_catalog.pg_class JOIN pg_catalog.pg_namespace ON pg_catalog.pg_namespace.oid = pg_catalog.pg_class.relnamespace 
+WHERE pg_catalog.pg_class.relname = %(table_name)s AND pg_catalog.pg_class.relkind = ANY (ARRAY[%(param_1)s, %(param_2)s, %(param_3)s, %(param_4)s, %(param_5)s]) AND pg_catalog.pg_table_is_visible(pg_catalog.pg_class.oid) AND pg_catalog.pg_namespace.nspname != %(nspname_1)s
+INFO:sqlalchemy.engine.Engine:[cached since 0.02584s ago] {'table_name': 'tasks', 'param_1': 'r', 'param_2': 'p', 'param_3': 'f', 'param_4': 'v', 'param_5': 'm', 'nspname_1': 'pg_catalog'}
+INFO:sqlalchemy.engine.Engine:COMMIT
+INFO:sqlalchemy.engine.Engine:BEGIN (implicit)
+INFO:sqlalchemy.engine.Engine:INSERT INTO projects (title) VALUES (%(title)s) RETURNING projects.project_id
+INFO:sqlalchemy.engine.Engine:[generated in 0.00126s] {'title': 'Clean house'}
+INFO:sqlalchemy.engine.Engine:INSERT INTO tasks (project_id, description) VALUES (%(project_id)s, %(description)s) RETURNING tasks.task_id
+INFO:sqlalchemy.engine.Engine:[generated in 0.00123s] {'project_id': 11, 'description': 'Clean bedroom'}
+INFO:sqlalchemy.engine.Engine:COMMIT
+INFO:sqlalchemy.engine.Engine:select pg_catalog.version()
+INFO:sqlalchemy.engine.Engine:[raw sql] {}
+INFO:sqlalchemy.engine.Engine:select current_schema()
+INFO:sqlalchemy.engine.Engine:[raw sql] {}
+INFO:sqlalchemy.engine.Engine:show standard_conforming_strings
+INFO:sqlalchemy.engine.Engine:[raw sql] {}
+INFO:sqlalchemy.engine.Engine:BEGIN (implicit)
+INFO:sqlalchemy.engine.Engine:SELECT pg_catalog.pg_class.relname 
+FROM pg_catalog.pg_class JOIN pg_catalog.pg_namespace ON pg_catalog.pg_namespace.oid = pg_catalog.pg_class.relnamespace 
+WHERE pg_catalog.pg_class.relname = %(table_name)s AND pg_catalog.pg_class.relkind = ANY (ARRAY[%(param_1)s, %(param_2)s, %(param_3)s, %(param_4)s, %(param_5)s]) AND pg_catalog.pg_table_is_visible(pg_catalog.pg_class.oid) AND pg_catalog.pg_namespace.nspname != %(nspname_1)s
+INFO:sqlalchemy.engine.Engine:[generated in 0.00141s] {'table_name': 'projects', 'param_1': 'r', 'param_2': 'p', 'param_3': 'f', 'param_4': 'v', 'param_5': 'm', 'nspname_1': 'pg_catalog'}
+INFO:sqlalchemy.engine.Engine:SELECT pg_catalog.pg_class.relname 
+FROM pg_catalog.pg_class JOIN pg_catalog.pg_namespace ON pg_catalog.pg_namespace.oid = pg_catalog.pg_class.relnamespace 
+WHERE pg_catalog.pg_class.relname = %(table_name)s AND pg_catalog.pg_class.relkind = ANY (ARRAY[%(param_1)s, %(param_2)s, %(param_3)s, %(param_4)s, %(param_5)s]) AND pg_catalog.pg_table_is_visible(pg_catalog.pg_class.oid) AND pg_catalog.pg_namespace.nspname != %(nspname_1)s
+INFO:sqlalchemy.engine.Engine:[cached since 0.0244s ago] {'table_name': 'tasks', 'param_1': 'r', 'param_2': 'p', 'param_3': 'f', 'param_4': 'v', 'param_5': 'm', 'nspname_1': 'pg_catalog'}
+INFO:sqlalchemy.engine.Engine:COMMIT
+INFO:sqlalchemy.engine.Engine:BEGIN (implicit)
+INFO:sqlalchemy.engine.Engine:INSERT INTO projects (title) VALUES (%(title)s) RETURNING projects.project_id
+INFO:sqlalchemy.engine.Engine:[generated in 0.00075s] {'title': 'Clean house'}
+INFO:sqlalchemy.engine.Engine:INSERT INTO tasks (project_id, description) VALUES (%(project_id)s, %(description)s) RETURNING tasks.task_id
+INFO:sqlalchemy.engine.Engine:[generated in 0.00094s] {'project_id': 12, 'description': 'Clean bedroom'}
+INFO:sqlalchemy.engine.Engine:COMMIT
+INFO:app:[<Project 1>, <Project 2>, <Project 3>, <Project 4>, <Project 5>, <Project 6>, <Project 7>, <Project 8>, <Project 9>, <Project 10>, <Project 11>, <Project 12>]
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug: * Restarting with stat
+INFO:sqlalchemy.engine.Engine:select pg_catalog.version()
+INFO:sqlalchemy.engine.Engine:[raw sql] {}
+INFO:sqlalchemy.engine.Engine:select current_schema()
+INFO:sqlalchemy.engine.Engine:[raw sql] {}
+INFO:sqlalchemy.engine.Engine:show standard_conforming_strings
+INFO:sqlalchemy.engine.Engine:[raw sql] {}
+INFO:sqlalchemy.engine.Engine:BEGIN (implicit)
+INFO:sqlalchemy.engine.Engine:SELECT pg_catalog.pg_class.relname 
+FROM pg_catalog.pg_class JOIN pg_catalog.pg_namespace ON pg_catalog.pg_namespace.oid = pg_catalog.pg_class.relnamespace 
+WHERE pg_catalog.pg_class.relname = %(table_name)s AND pg_catalog.pg_class.relkind = ANY (ARRAY[%(param_1)s, %(param_2)s, %(param_3)s, %(param_4)s, %(param_5)s]) AND pg_catalog.pg_table_is_visible(pg_catalog.pg_class.oid) AND pg_catalog.pg_namespace.nspname != %(nspname_1)s
+INFO:sqlalchemy.engine.Engine:[generated in 0.00122s] {'table_name': 'projects', 'param_1': 'r', 'param_2': 'p', 'param_3': 'f', 'param_4': 'v', 'param_5': 'm', 'nspname_1': 'pg_catalog'}
+INFO:sqlalchemy.engine.Engine:SELECT pg_catalog.pg_class.relname 
+FROM pg_catalog.pg_class JOIN pg_catalog.pg_namespace ON pg_catalog.pg_namespace.oid = pg_catalog.pg_class.relnamespace 
+WHERE pg_catalog.pg_class.relname = %(table_name)s AND pg_catalog.pg_class.relkind = ANY (ARRAY[%(param_1)s, %(param_2)s, %(param_3)s, %(param_4)s, %(param_5)s]) AND pg_catalog.pg_table_is_visible(pg_catalog.pg_class.oid) AND pg_catalog.pg_namespace.nspname != %(nspname_1)s
+INFO:sqlalchemy.engine.Engine:[cached since 0.0238s ago] {'table_name': 'tasks', 'param_1': 'r', 'param_2': 'p', 'param_3': 'f', 'param_4': 'v', 'param_5': 'm', 'nspname_1': 'pg_catalog'}
+INFO:sqlalchemy.engine.Engine:COMMIT
+INFO:sqlalchemy.engine.Engine:BEGIN (implicit)
+INFO:sqlalchemy.engine.Engine:INSERT INTO projects (title) VALUES (%(title)s) RETURNING projects.project_id
+INFO:sqlalchemy.engine.Engine:[generated in 0.00099s] {'title': 'Clean house'}
+INFO:sqlalchemy.engine.Engine:INSERT INTO tasks (project_id, description) VALUES (%(project_id)s, %(description)s) RETURNING tasks.task_id
+INFO:sqlalchemy.engine.Engine:[generated in 0.00107s] {'project_id': 13, 'description': 'Clean bedroom'}
+INFO:sqlalchemy.engine.Engine:COMMIT
+INFO:app:[<Project 1>, <Project 2>, <Project 3>, <Project 4>, <Project 5>, <Project 6>, <Project 7>, <Project 8>, <Project 9>, <Project 10>, <Project 11>, <Project 12>, <Project 13>]
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 280-358-081
+INFO:werkzeug:127.0.0.1 - - [25/Jul/2023 17:03:40] "GET / HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [25/Jul/2023 17:03:42] "GET /project/1 HTTP/1.1" 200 -
+INFO:werkzeug: * Detected change in 'e:\\prac_dat_ex\\advanced-python-practical-database-examples-4363655\\project-tracker-workspace\\database.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:sqlalchemy.engine.Engine:select pg_catalog.version()
+INFO:sqlalchemy.engine.Engine:[raw sql] {}
+INFO:sqlalchemy.engine.Engine:select current_schema()
+INFO:sqlalchemy.engine.Engine:[raw sql] {}
+INFO:sqlalchemy.engine.Engine:show standard_conforming_strings
+INFO:sqlalchemy.engine.Engine:[raw sql] {}
+INFO:sqlalchemy.engine.Engine:BEGIN (implicit)
+INFO:sqlalchemy.engine.Engine:INSERT INTO projects (title) VALUES (%(title)s) RETURNING projects.project_id
+INFO:sqlalchemy.engine.Engine:[generated in 0.00074s] {'title': 'Clean house'}
+INFO:sqlalchemy.engine.Engine:INSERT INTO tasks (project_id, description) VALUES (%(project_id)s, %(description)s) RETURNING tasks.task_id
+INFO:sqlalchemy.engine.Engine:[generated in 0.00099s] {'project_id': 14, 'description': 'Clean bedroom'}
+INFO:sqlalchemy.engine.Engine:COMMIT
+INFO:app:[<Project 1>, <Project 2>, <Project 3>, <Project 4>, <Project 5>, <Project 6>, <Project 7>, <Project 8>, <Project 9>, <Project 10>, <Project 11>, <Project 12>, <Project 13>, <Project 14>]
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 280-358-081
+INFO:werkzeug:127.0.0.1 - - [25/Jul/2023 17:04:38] "GET / HTTP/1.1" 200 -
+INFO:werkzeug: * Detected change in 'e:\\prac_dat_ex\\advanced-python-practical-database-examples-4363655\\project-tracker-workspace\\database.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:app:[<Project 1>, <Project 2>, <Project 3>, <Project 4>, <Project 5>, <Project 6>, <Project 7>, <Project 8>, <Project 9>, <Project 10>, <Project 11>, <Project 12>, <Project 13>, <Project 14>]
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 280-358-081
+INFO:werkzeug:127.0.0.1 - - [25/Jul/2023 17:04:52] "GET / HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [25/Jul/2023 17:04:55] "GET / HTTP/1.1" 200 -
+INFO:app:[<Project 1>, <Project 2>, <Project 3>, <Project 4>, <Project 5>, <Project 6>, <Project 7>, <Project 8>, <Project 9>, <Project 10>, <Project 11>, <Project 12>, <Project 13>, <Project 14>]
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug: * Restarting with stat
+INFO:app:[<Project 1>, <Project 2>, <Project 3>, <Project 4>, <Project 5>, <Project 6>, <Project 7>, <Project 8>, <Project 9>, <Project 10>, <Project 11>, <Project 12>, <Project 13>, <Project 14>]
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 280-358-081
+INFO:werkzeug:127.0.0.1 - - [25/Jul/2023 17:06:30] "GET / HTTP/1.1" 200 -
+INFO:werkzeug: * Detected change in 'e:\\prac_dat_ex\\advanced-python-practical-database-examples-4363655\\project-tracker-workspace\\app.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 280-358-081
+INFO:werkzeug: * Detected change in 'e:\\prac_dat_ex\\advanced-python-practical-database-examples-4363655\\project-tracker-workspace\\app.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 280-358-081
+INFO:werkzeug: * Detected change in 'e:\\prac_dat_ex\\advanced-python-practical-database-examples-4363655\\project-tracker-workspace\\app.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 280-358-081
+INFO:werkzeug: * Detected change in 'e:\\prac_dat_ex\\advanced-python-practical-database-examples-4363655\\project-tracker-workspace\\app.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 280-358-081
+INFO:root:[<Project 1>, <Project 2>, <Project 3>, <Project 4>, <Project 5>, <Project 6>, <Project 7>, <Project 8>, <Project 9>, <Project 10>, <Project 11>, <Project 12>, <Project 13>, <Project 14>]
+INFO:werkzeug:127.0.0.1 - - [25/Jul/2023 17:08:50] "GET / HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [25/Jul/2023 17:08:54] "GET /project/1 HTTP/1.1" 200 -
+INFO:werkzeug: * Detected change in 'e:\\prac_dat_ex\\advanced-python-practical-database-examples-4363655\\project-tracker-workspace\\app.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 280-358-081
+INFO:werkzeug: * Detected change in 'e:\\prac_dat_ex\\advanced-python-practical-database-examples-4363655\\project-tracker-workspace\\app.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 280-358-081
+INFO:werkzeug: * Detected change in 'e:\\prac_dat_ex\\advanced-python-practical-database-examples-4363655\\project-tracker-workspace\\app.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 280-358-081
+INFO:werkzeug: * Detected change in 'e:\\prac_dat_ex\\advanced-python-practical-database-examples-4363655\\project-tracker-workspace\\app.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 280-358-081
+INFO:root:[<Project 1>, <Project 2>, <Project 3>, <Project 4>, <Project 5>, <Project 6>, <Project 7>, <Project 8>, <Project 9>, <Project 10>, <Project 11>, <Project 12>, <Project 13>, <Project 14>]
+INFO:app:This is an info message.
+WARNING:app:This is a warning message.
+ERROR:app:This is an error message.
+INFO:werkzeug:127.0.0.1 - - [25/Jul/2023 17:12:10] "GET / HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [25/Jul/2023 17:12:12] "GET /project/1 HTTP/1.1" 200 -
+INFO:root:[<Project 1>, <Project 2>, <Project 3>, <Project 4>, <Project 5>, <Project 6>, <Project 7>, <Project 8>, <Project 9>, <Project 10>, <Project 11>, <Project 12>, <Project 13>, <Project 14>]
+INFO:app:This is an info message.
+WARNING:app:This is a warning message.
+ERROR:app:This is an error message.
+INFO:werkzeug:127.0.0.1 - - [25/Jul/2023 17:13:10] "GET / HTTP/1.1" 200 -
+INFO:werkzeug: * Detected change in 'e:\\prac_dat_ex\\advanced-python-practical-database-examples-4363655\\project-tracker-workspace\\app.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 280-358-081
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 280-358-081
+INFO:werkzeug: * Detected change in 'e:\\prac_dat_ex\\advanced-python-practical-database-examples-4363655\\project-tracker-workspace\\app.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:app:This is an info message.
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:app:This is an info message.
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:app:This is an info message.
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug: * Restarting with stat
+INFO:app:This is an info message.
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 280-358-081
+INFO:werkzeug: * Detected change in 'e:\\prac_dat_ex\\advanced-python-practical-database-examples-4363655\\project-tracker-workspace\\app.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:app:This is an info message.
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 280-358-081
+INFO:werkzeug: * Detected change in 'e:\\prac_dat_ex\\advanced-python-practical-database-examples-4363655\\project-tracker-workspace\\app.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:app:This is an info message.
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 280-358-081
+INFO:werkzeug: * Detected change in 'e:\\prac_dat_ex\\advanced-python-practical-database-examples-4363655\\project-tracker-workspace\\app.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:app:This is an info message.
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug: * Restarting with stat
+INFO:app:This is an info message.
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 280-358-081
+INFO:werkzeug: * Detected change in 'e:\\prac_dat_ex\\advanced-python-practical-database-examples-4363655\\project-tracker-workspace\\app.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:app:This is an info message.
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 280-358-081
+INFO:werkzeug: * Detected change in 'e:\\prac_dat_ex\\advanced-python-practical-database-examples-4363655\\project-tracker-workspace\\app.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:app:This is an info message.
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug: * Restarting with stat
+INFO:app:This is an info message.
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 280-358-081
+INFO:werkzeug: * Detected change in 'e:\\prac_dat_ex\\advanced-python-practical-database-examples-4363655\\project-tracker-workspace\\app.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:app:This is an info message.
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 280-358-081
+INFO:werkzeug: * Detected change in 'e:\\prac_dat_ex\\advanced-python-practical-database-examples-4363655\\project-tracker-workspace\\app.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 280-358-081
+INFO:werkzeug: * Detected change in 'e:\\prac_dat_ex\\advanced-python-practical-database-examples-4363655\\project-tracker-workspace\\app.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 280-358-081
+INFO:werkzeug: * Detected change in 'e:\\prac_dat_ex\\advanced-python-practical-database-examples-4363655\\project-tracker-workspace\\app.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 280-358-081
+INFO:werkzeug: * Detected change in 'e:\\prac_dat_ex\\advanced-python-practical-database-examples-4363655\\project-tracker-workspace\\app.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 280-358-081
+INFO:werkzeug: * Detected change in 'e:\\prac_dat_ex\\advanced-python-practical-database-examples-4363655\\project-tracker-workspace\\app.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 280-358-081
+INFO:werkzeug: * Detected change in 'e:\\prac_dat_ex\\advanced-python-practical-database-examples-4363655\\project-tracker-workspace\\app.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 280-358-081
+INFO:werkzeug: * Detected change in 'e:\\prac_dat_ex\\advanced-python-practical-database-examples-4363655\\project-tracker-workspace\\app.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 280-358-081
+INFO:werkzeug: * Detected change in 'e:\\prac_dat_ex\\advanced-python-practical-database-examples-4363655\\project-tracker-workspace\\app.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 280-358-081
+INFO:werkzeug: * Detected change in 'e:\\prac_dat_ex\\advanced-python-practical-database-examples-4363655\\project-tracker-workspace\\app.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 280-358-081
+INFO:werkzeug: * Detected change in 'e:\\prac_dat_ex\\advanced-python-practical-database-examples-4363655\\project-tracker-workspace\\app.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 280-358-081
+INFO:werkzeug: * Detected change in 'e:\\prac_dat_ex\\advanced-python-practical-database-examples-4363655\\project-tracker-workspace\\app.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 280-358-081
+INFO:werkzeug:127.0.0.1 - - [25/Jul/2023 17:38:57] "GET / HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [25/Jul/2023 17:38:59] "GET / HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [25/Jul/2023 17:38:59] "GET / HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [25/Jul/2023 17:38:59] "GET / HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [25/Jul/2023 17:39:00] "GET / HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [25/Jul/2023 17:39:00] "GET / HTTP/1.1" 200 -
+INFO:werkzeug: * Detected change in 'e:\\prac_dat_ex\\advanced-python-practical-database-examples-4363655\\project-tracker-workspace\\app.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 280-358-081
