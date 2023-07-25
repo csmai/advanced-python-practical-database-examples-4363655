@@ -1,18 +1,10 @@
 from flask import Flask, render_template
 from flask_sqlalchemy import SQLAlchemy
 from database import engine_conn_string
-import logging
-from flask.logging import default_handler
-from os import environ
-
-# import os
 
 app = Flask(__name__)
 
-# Set the log level to capture messages of INFO and above
-app.logger.removeHandler(default_handler)
-logging.basicConfig(filename="output.log", level=logging.INFO)
-
+app.config["DEBUG_TB_INTERCEPT_REDIRECTS"] = False
 app.config["SQLALCHEMY_DATABASE_URI"] = engine_conn_string()
 app.config[
     "SECRET_KEY"
@@ -35,7 +27,8 @@ print("This is a printed message.")
 @app.route("/")
 def show_projects():
     print("Project.query.all()")
-    print(Project.query.all())
+    app.logger.error(Project.query.all())
+    app.logger.error(Project.query.all()[0].project_id)
     return render_template("index.html", projects=Project.query.all())
 
 

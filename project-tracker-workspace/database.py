@@ -1,9 +1,6 @@
 from sqlalchemy import create_engine, Column, Integer, String, ForeignKey
 from sqlalchemy.orm import registry, relationship, Session
 import os
-import logging
-
-logging.basicConfig(filename="output.log", level=logging.INFO)
 
 
 def engine_conn_string():
