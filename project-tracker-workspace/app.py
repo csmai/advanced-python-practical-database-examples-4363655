@@ -1,6 +1,17 @@
 from flask import Flask, render_template
+from flask_sqlalchemy import SQLAlchemy
+from database import engine_conn_string
+
+# import os
 
 app = Flask(__name__)
+
+app.config["SQLALCHEMY_DATABASE_URI"] = engine_conn_string()
+app.config[
+    "SECRET_KEY"
+] = "ca290e3692d7cee6efd34dc8c5c621b557af981f8e0c1e4be1e911c6d58b5b2d"
+
+db = SQLAlchemy()
 
 
 # Define a route

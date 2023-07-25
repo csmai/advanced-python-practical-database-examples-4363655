@@ -5,11 +5,13 @@ import logging
 
 logging.basicConfig(filename="output.log", level=logging.INFO)
 
-password = os.getenv("P4PASSWD")
 
-engine = create_engine(
-    f"postgresql+psycopg2://postgres:{password}@localhost/projecttracker", echo=True
-)
+def engine_conn_string():
+    password = os.getenv("P4PASSWD")
+    return f"postgresql+psycopg2://postgres:{password}@localhost/projecttracker"
+
+
+engine = create_engine(engine_conn_string(), echo=True)
 
 mapper_registry = registry()
 
