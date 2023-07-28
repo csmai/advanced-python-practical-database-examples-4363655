@@ -1,6 +1,7 @@
 <html>
 	<body>
 		<h3>Projects</h3>
+		<link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
 		<ul>
 			{% for proj in projects %}
      		<h3><li><a href="/project/{{proj. project_id }}">{{ proj.title }}</a></li></h3>
@@ -16,5 +17,12 @@
 				<input type="submit" value="Add Project">
 			</div>
 		</form>
+		{% with messages = get_flashed_messages(with_categories=true) %}
+		{% if messages %}
+			{% for category, message in messages %}
+			<div class="{{ category }}">{{ message }}</div>
+			{% endfor %}
+		{% endif %}
+		{% endwith %}
 	</body>
 </html>

@@ -51,19 +51,35 @@ def show_tasks(project_id):
 
 @app.route("/add/project", methods=["POST"])
 def add_project():
-    if request.form["project-title"] is not None:
+    if request.form["project-title"]:
         new_project = Project(title=request.form["project-title"])
         db.session.add(new_project)
         db.session.commit()
+        flash("Project added successfully", "message")
     else:
-        flash("Please enter a project title!", color="red")
-    return "Project added successfully"
+        flash("Please enter a project title!", "error")
+    return redirect(url_for("show_projects"))
 
 
 @app.route("/add/task/<project_id>", methods=["POST"])
 def add_task(project_id):
-    # TODO: Add task
-    return "Task added successfully"
+    if request.form["task-name"]:
+        new_task = Task(description=request.form["task-name"], project_id=project_id)
+        db.session.add(new_task)
+        db.session.commit()
+        flash("Task added successfully", "message")
+    else:
+        flash("Please enter task description!", "error")
+    return redirect(url_for("show_tasks", project_id=project_id))
+
+
+@app.route("/delete/task/<project_id>/<task_id>", methods=["POST"])
+def delete_task(project_id, task_id):
+    task_to_del = Task.query.filter_by(project_id=project_id, task_id=task_id).first()
+    db.session.delete(task_to_del)
+    db.session.commit()
+    flash("Task deleted successfully", "message")
+    return redirect(url_for("show_tasks", project_id=project_id))
 
 
 app.run(debug=True)

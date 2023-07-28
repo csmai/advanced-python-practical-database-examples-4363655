@@ -1,9 +1,17 @@
 <html>
 	<body>
 		<h1>{{project.title}}'s Tasks</h1>
+		<link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
 		<ul>
 			{% for t in tasks %}
-			<h3><li>{{ t.description }}</li></h3>
+			<li style="display: flex; align-items: center;">
+				<div style="display: flex; align-items: center;">
+					<h3 style="margin-right: 10px;">{{ t.description }}</h3>
+					<form action="/delete/task/{{ t.project_id }}/{{ t.task_id }}" method="POST">
+						<input type="submit" value="Delete">
+					</form>
+				</div>
+			</li>
 			{% endfor %}
 		</ul>
 
@@ -11,8 +19,14 @@
 		<form action="/add/task/{{project.project_id}}" method="POST">
 			Task: <input type="text" name="task-name">
 			<br>
-			<br>
 			<input type="submit" value="Add Task">
 		</form>
+		{% with messages = get_flashed_messages(with_categories=true) %}
+		{% if messages %}
+			{% for category, message in messages %}
+			<div class="{{ category }}">{{ message }}</div>
+			{% endfor %}
+		{% endif %}
+		{% endwith %}
 	</body>
 </html>
