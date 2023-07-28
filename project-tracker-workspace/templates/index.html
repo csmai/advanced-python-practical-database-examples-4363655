@@ -4,7 +4,16 @@
 		<link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
 		<ul>
 			{% for proj in projects %}
-     		<h3><li><a href="/project/{{proj. project_id }}">{{ proj.title }}</a></li></h3>
+     		<li style="display: flex; align-items: center;">
+				<div style="display: flex; align-items: center;">
+					<h3 style="margin-right: 10px;">
+						<a href="/project/{{proj. project_id }}">{{ proj.title }}</a></h3>
+					
+					<form action="/delete/project/{{ proj.project_id }}" method="POST">
+						<input type="submit" value="Delete">
+					</form>
+			</div>
+		</li>
    			{% endfor %}
 		</ul>
 		<br>

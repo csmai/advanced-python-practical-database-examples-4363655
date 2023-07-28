@@ -82,4 +82,20 @@ def delete_task(project_id, task_id):
     return redirect(url_for("show_tasks", project_id=project_id))
 
 
+@app.route("/delete/project/<project_id>", methods=["POST"])
+def delete_project(project_id):
+    proj_to_del = Project.query.filter_by(project_id=project_id).first()
+    tasks_to_del = Task.query.filter_by(project_id=project_id).all()
+    if tasks_to_del:
+        for task in tasks_to_del:
+            delete_task(project_id, task.task_id)
+            print(f"deleted: {task.description}")
+    print(tasks_to_del, type(tasks_to_del))
+    db.session.delete(proj_to_del)
+    db.session.commit()
+    flash("Project deleted successfully", "message")
+
+    return redirect(url_for("show_projects", project_id=project_id))
+
+
 app.run(debug=True)
